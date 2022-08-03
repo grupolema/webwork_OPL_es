@@ -13,7 +13,7 @@ Licencia de uso cc-by 4.0
 
 1. Crear una tarea con su nombre.
 
-   <img src="archivosInternos/imagenesTutorialPGML/image2.png"  width="200" />
+   <img src="archivosInternos/imagenesTutorialPGML/image2.png"  width="600" />
    ![](archivosInternos/imagenesTutorialPGML/image2.png)
 
 
