@@ -104,10 +104,10 @@ Para hacer esto:
 
 `plantillaPGML-CampoRespuesta.pg`
 
-Escondido en el hint hay ejemplos de cómo:
-cambiar el tamaño de campo de respuesta y
-agregar ayudas de ingreso de respuestas "AnswerFormatHelp.pl".
-Ver la respuesta correcta como la va a ver el estudiante chuleando "Correct Answers" antes de presionar "Check Answers"
+*  Escondido en el hint hay ejemplos de cómo:
+   +  cambiar el tamaño de campo de respuesta y
+   +  agregar ayudas de ingreso de respuestas "AnswerFormatHelp.pl".
+*  Ver la respuesta correcta como la va a ver el estudiante chuleando "Correct Answers" antes de presionar "Check Answers"
 
 ### Números y tolerancias
 
