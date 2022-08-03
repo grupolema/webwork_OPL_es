@@ -77,7 +77,7 @@ Para hacer esto:
 
 ## Como guardar cambios una vez el archivo tenga el nombre correcto
    
-   <img src="archivosInternos/imagenesTutorialPGML/image7.png" width="600" />
+   <img src="archivosInternos/imagenesTutorialPGML/image7.png" width="500" />
 <!-- ![](archivosInternos/imagenesTutorialPGML/image7.png) -->
 
 
