@@ -5,6 +5,8 @@ Grupo LEMA, 2021
 www.grupolema.org
 Licencia de uso cc-by 4.0
 
+**Nota:** los archivos de ejemplo `plantillaPGML-_____.pg` que se mencionan en este documento se encuentran en la carpeta [plantillas-machotes-PGML](plantillas-machotes-PGML).
+
 
 ## Crear un "blank problem" y entrar a editarlo
 
@@ -40,7 +42,7 @@ seguido de...
 
 ## La estructura básica de un archivo .pg (usando PGML)
 
-*  Ver archivo `plantillaPGML-EstructuraBasica.pg`
+*  Ver archivo `plantillaPGML-EstructuraBasica.pg` (en la carpeta [plantillas-machotes-PGML](plantillas-machotes-PGML)).
 *  Hay espacios en los que el lenguaje es Perl, otros en los que es PGML... es un archivo "híbrido".
 *  Matemáticas con LaTeX:
      * LaTeX math-mode ($...$): [`\LaTeX`]
