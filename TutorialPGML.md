@@ -56,7 +56,7 @@ Licencia de uso cc-by 4.0
 *  Preview con el botón "ver---> ejecutar" (View --> Take Action)
 *  Ejercicios básicos de escribir matemáticas en enunciado, agregar hint, escribir solución.
    
-   <img src="archivosInternos/imagenesTutorialPGML/image6.png" width="600" />
+   <img src="archivosInternos/imagenesTutorialPGML/image6.png" width="500" />
 <!-- ![](archivosInternos/imagenesTutorialPGML/image6.png) -->
 
 
