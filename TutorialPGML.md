@@ -1,7 +1,7 @@
 # Formación en programación de problemas WebWorK
 
 Enrique Acosta  
-Grupo LEMA, 2021  
+Grupo LEMA, 2022  
 www.grupolema.org  
 Licencia de uso cc-by 4.0
 
@@ -14,29 +14,27 @@ Licencia de uso cc-by 4.0
 1. Crear una tarea con su nombre.
 
 
-![](archivosInternos/imagenesTutorialPGML/image2.png)
+    ![](archivosInternos/imagenesTutorialPGML/image2.png)
 
 
 2. Entrar a editar la tarea ("edit set", que salga la lista de problemas)
+   
+   ![](archivosInternos/imagenesTutorialPGML/image10.png)
 
+   seguido de...
 
-![](archivosInternos/imagenesTutorialPGML/image10.png)
-
-
-seguido de...
-
-![](archivosInternos/imagenesTutorialPGML/image8.png)
+   ![](archivosInternos/imagenesTutorialPGML/image8.png)
 
 
 3. Agregar un blank problem a la tarea:
 
-![](archivosInternos/imagenesTutorialPGML/image9.png)
+   ![](archivosInternos/imagenesTutorialPGML/image9.png)
 
 
 
 4. Entrar a editar el nuevo problema con el botón del lápiz:
 
-![](archivosInternos/imagenesTutorialPGML/image5.png)
+   ![](archivosInternos/imagenesTutorialPGML/image5.png)
 
 
 
