@@ -216,12 +216,12 @@ https://webwork.maa.org/wiki/LinearApprox1
 
 *  Tratar de hacer el pensamiento de estudiante visible con campos de respuesta (no solo la respuesta correcta).
 *  Hay que pensar en todas las respuestas aceptables, y aceptarlas todas como correctas. Ejemplos:
-*  Tolerancia numérica para tener en cuenta redondeos de números en cálculos intermedios, o advertirle al estudiante que solo se va a aceptar la respuesta exacta.
-*  Uso de constantes +c (en integración). ¿Otras letras para las constantes?
+   -  Tolerancia numérica para tener en cuenta redondeos de números en cálculos intermedios, o advertirle al estudiante que solo se va a aceptar la respuesta exacta.
+   -  Uso de constantes +c (en integración). ¿Otras letras para las constantes?
 *  Hay que ser claro con el estudiante en qué se espera.
-*  "Usa C como constante de integración."
-*  "Escribe la respuesta exacta, o aproxima a la milésima más cercana." (puede que en este caso el campo de respuesta califique a menos decimales, por redondeos intermedios).
-*  "Usa $r$ para el radio en tu respuesta."
+   -  "Usa C como constante de integración."
+   -  "Escribe la respuesta exacta, o aproxima a la milésima más cercana." (puede que en este caso el campo de respuesta califique a menos decimales, por redondeos intermedios).
+   -  "Usa $r$ para el radio en tu respuesta."
 *  La aleatorización se piensa después de pensar los campos de respuesta, no antes.
 *  La aleatorización no puede tener versiones más complejas para los estudiantes.
 *  Los Hints son importantes (a menudo sirve dar una versión del principio de la solución escrita como hint). Las soluciones completas sirven si el profesor las va a hacer disponibles.
