@@ -9,3 +9,7 @@ Iniciativa del Grupo LEMA: www.grupolema.org
 
 *  Ver [TutorialPGML.md](TutorialPGML.md)
 *  Ver las [plantillas de PGML](plantillas-machotes-PGML)
+
+
+## Már recursos de WeBWorK
+Ver https://www.grupolema.org/webwork-recursos
