@@ -195,6 +195,15 @@ El error es empezar a programar un problema pensando en la aleatorización y no 
 `plantillaPGML-PartesSeparadas.pg`
 
 
+## mostrar números sin decimales:
+En el contexto numérico, ajustar como se muestan las constantes, y crear el número como un objeto `Formula`. Ejemplo: 
+```
+Context()->flags->set(reduceConstants => 0, reduceConstantFunctions => 0);
+$f = Formula("(1+sqrt(5))/2)");
+```
+Esto hace que `$f` se muestre al estudiante como `1 + sqrt(5))/2` y no como `1.61803`.
+
+
 ## PGML vs PG
 *  Wiki: https://webwork.maa.org/wiki/Authors
 *  subject area templates, ODE
@@ -236,12 +245,6 @@ https://webwork.maa.org/wiki/LinearApprox1
 ## Ejemplos más complejos
 
 *  Dropdown o Multiple Choice en le que la respuesta correcta es aleatoria: `plantillaPGML-RandomizacionesDropdownRespuestaCorrectaAleatoria.pg`
-*  mostrar números sin decimales:
-   ```
-   Context()->flags->set(reduceConstants => 0, reduceConstantFunctions => 0);
-   $f = Formula("(1+sqrt(5))/2)");
-   ```
-   Esto hace que $f se muestre al estudiante como `1 + sqrt(5))/2` y no como `1.61803`.
 *  Evaluar dos campos al tiempo, o en distinto orden
 *  StressTests (Consortium)
    1.  Question with algorithmic graph in the statement
