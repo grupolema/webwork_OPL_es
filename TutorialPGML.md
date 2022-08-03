@@ -93,7 +93,7 @@ Para hacer esto:
 
 2. Seleccionar el tgzip que se creó y descargarlo.
    
-   <img src="archivosInternos/imagenesTutorialPGML/image3.png" width="600" />
+   <img src="archivosInternos/imagenesTutorialPGML/image3.png" width="500" />
 <!-- ![](archivosInternos/imagenesTutorialPGML/image3.png) -->
 
 
