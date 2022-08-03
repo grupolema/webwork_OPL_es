@@ -120,8 +120,7 @@ Ver `plantillaPGML-CampoRespuestaTolerancia.pg`
 *  variables distintas a x (ajustes a contextos): `plantillaPGML-ExpresionesVariables.pg`
 *  Más info de contextos: https://webwork.maa.org/wiki/Introduction_to_Contexts
 *  dominios para cambiar equivalencias algebraicas (y más sobre ajustes a contextos - deshabilitar funciones y operadores): `plantillaPGML-ExpresionesDominio.pg`
-*  más info sobre expresiones:
-*  https://webwork.maa.org/wiki/Formula_(MathObject_Class)
+*  más info sobre expresiones: https://webwork.maa.org/wiki/Formula_(MathObject_Class)
 
 ### Puntos
 
@@ -179,7 +178,7 @@ El error es empezar a programar un problema pensando en la aleatorización y no 
 *  ¿Cómo se debería ver el problema en WeBWorK? 
 *  ¿Cuáles y cuántos  son los campos de respuesta que voy a crear?
 
-¡Programar un problema en WW no es escribir el algoritmo de aleatorización!
+¡Programar un problema en WeBWorK no es escribir el algoritmo de aleatorización!
 
 
 ### Estar pendiente de cómo se ven las respuestas para los estudiantes
@@ -210,7 +209,7 @@ https://webwork.maa.org/wiki/LinearApprox1
 *  Estáticas - prácticas de fólderes asociados.
 *  Estáticas pero aleatorizadas
 *  Aleatorizadas - sistema básico
-*  Aleatorizadas - tikz en WW 2.16
+*  Aleatorizadas - tikz en WeBWorK 2.16
 
 
 ## Recomendaciones generales al programar
