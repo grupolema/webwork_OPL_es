@@ -5,7 +5,7 @@ Versión en español del Open Problem Library de WeBWork.
 
 Iniciativa del Grupo LEMA: www.grupolema.org
 
-Para programar problemas nuevos:
+## Para programar problemas nuevos:
 
 *  Ver [TutorialPGML.md](tutorialPGML.md)
 *  Ver las [plantillas de PGML](plantillas-machotes-PGML)
