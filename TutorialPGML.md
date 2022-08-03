@@ -14,27 +14,27 @@ Licencia de uso cc-by 4.0
 1. Crear una tarea con su nombre.
 
    <img src="archivosInternos/imagenesTutorialPGML/image2.png"  width="800" />
-   ![](archivosInternos/imagenesTutorialPGML/image2.png)
+   <!-- ![](archivosInternos/imagenesTutorialPGML/image2.png) -->
 
 
 2. Entrar a editar la tarea ("edit set", que salga la lista de problemas)
-   
-   ![](archivosInternos/imagenesTutorialPGML/image10.png)
+   <img src="archivosInternos/imagenesTutorialPGML/image10.png" width="800" />   
+   <!-- ![](archivosInternos/imagenesTutorialPGML/image10.png) -->
 
    seguido de...
-
-   ![](archivosInternos/imagenesTutorialPGML/image8.png)
+   <img src="archivosInternos/imagenesTutorialPGML/image8.png" width="800" />
+   <!-- ![](archivosInternos/imagenesTutorialPGML/image8.png) -->
 
 
 3. Agregar un blank problem a la tarea:
-
-   ![](archivosInternos/imagenesTutorialPGML/image9.png)
+   <img src="archivosInternos/imagenesTutorialPGML/image9.png" width="800" />
+   <!-- ![](archivosInternos/imagenesTutorialPGML/image9.png) -->
 
 
 
 4. Entrar a editar el nuevo problema con el botón del lápiz:
-
-   ![](archivosInternos/imagenesTutorialPGML/image5.png)
+   <img src="archivosInternos/imagenesTutorialPGML/image5.png" width="800" />
+   <!-- ![](archivosInternos/imagenesTutorialPGML/image5.png) -->
 
 
 
@@ -51,8 +51,8 @@ Licencia de uso cc-by 4.0
 
 *  Preview con el botón "ver---> ejecutar" (View --> Take Action)
 *  Ejercicios básicos de escribir matemáticas en enunciado, agregar hint, escribir solución.
-
-![](archivosInternos/imagenesTutorialPGML/image6.png)
+   <img src="archivosInternos/imagenesTutorialPGML/image6.png" width="800" />
+<!-- ![](archivosInternos/imagenesTutorialPGML/image6.png) -->
 
 
 ## Crear un nombre apropiado para el archivo y guardar los cambios
@@ -63,29 +63,29 @@ Hay que darle un nombre al archivo (que no quede como el nombre por defecto blan
 Para hacer esto:
 
 *  Nueva versión ---> un buen nombre (e.j. setEnrique/problema1.pg)
-
-![](archivosInternos/imagenesTutorialPGML/image1.png)
+   <img src="archivosInternos/imagenesTutorialPGML/image1.png" width="800" />
+<!-- ![](archivosInternos/imagenesTutorialPGML/image1.png) -->
 
 
 
 
 ## Como guardar cambios una vez el archivo tenga el nombre correcto
-
-![](archivosInternos/imagenesTutorialPGML/image7.png)
+   <img src="archivosInternos/imagenesTutorialPGML/image7.png" width="800" />
+<!-- ![](archivosInternos/imagenesTutorialPGML/image7.png) -->
 
 
 
 ## Descargar los archivos .pg
 
 1. Ir a admin archivos y crear "archive" (tgzip)
-
-![](archivosInternos/imagenesTutorialPGML/image4.png)
+   <img src="archivosInternos/imagenesTutorialPGML/image4.png" width="800" />
+<!-- ![](archivosInternos/imagenesTutorialPGML/image4.png) -->
 
 
 
 2. Seleccionar el tgzip que se creó y descargarlo.
-
-![](archivosInternos/imagenesTutorialPGML/image3.png)
+   <img src="archivosInternos/imagenesTutorialPGML/image3.png" width="800" />
+<!-- ![](archivosInternos/imagenesTutorialPGML/image3.png) -->
 
 
 
