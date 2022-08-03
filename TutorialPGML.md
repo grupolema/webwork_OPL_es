@@ -18,10 +18,12 @@ Licencia de uso cc-by 4.0
 
 
 2. Entrar a editar la tarea ("edit set", que salga la lista de problemas)
+   
    <img src="archivosInternos/imagenesTutorialPGML/image10.png" width="800" />   
    <!-- ![](archivosInternos/imagenesTutorialPGML/image10.png) -->
 
    seguido de...
+   
    <img src="archivosInternos/imagenesTutorialPGML/image8.png" width="800" />
    <!-- ![](archivosInternos/imagenesTutorialPGML/image8.png) -->
 
