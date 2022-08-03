@@ -13,8 +13,8 @@ Licencia de uso cc-by 4.0
 
 1. Crear una tarea con su nombre.
 
-
-    ![](archivosInternos/imagenesTutorialPGML/image2.png)
+   <img src="archivosInternos/imagenesTutorialPGML/image2.png"  width="200" />
+   ![](archivosInternos/imagenesTutorialPGML/image2.png)
 
 
 2. Entrar a editar la tarea ("edit set", que salga la lista de problemas)
