@@ -47,9 +47,9 @@ Licencia de uso cc-by 4.0
 *  Ver archivo `plantillaPGML-EstructuraBasica.pg` (en la carpeta [plantillas-machotes-PGML](plantillas-machotes-PGML)).
 *  Hay espacios en los que el lenguaje es Perl, otros en los que es PGML... es un archivo "híbrido".
 *  Matemáticas con LaTeX:
-     * LaTeX math-mode ($...$): [`\LaTeX`]
-     * LaTeX displaystyle ($\displaystyle...$): [``\LaTeX``]
-     * LaTeX en display-mode ($$...$$): [```\LaTeX```]
+     * LaTeX math-mode ($...$): `[`\LaTeX`]`
+     * LaTeX displaystyle ($\displaystyle...$): `[``\LaTeX``]`
+     * LaTeX en display-mode ($$...$$): `[```\LaTeX```]`
 
 ## Vista previa de los cambios
 
