@@ -69,7 +69,7 @@ Para hacer esto:
 
 *  Nueva versión ---> un buen nombre (e.j. setEnrique/problema1.pg)
    
-   <img src="archivosInternos/imagenesTutorialPGML/image1.png" width="600" />
+   <img src="archivosInternos/imagenesTutorialPGML/image1.png" width="500" />
 <!-- ![](archivosInternos/imagenesTutorialPGML/image1.png) -->
 
 
