@@ -102,7 +102,7 @@ Para hacer esto:
 
 ### Los contextos, el "Compute", el objeto de respuesta.
 
-`plantillaPGML-CampoRespuesta.pg`
+Ver `plantillaPGML-CampoRespuesta.pg`
 
 *  Escondido en el hint hay ejemplos de cómo:
    +  cambiar el tamaño de campo de respuesta y
@@ -111,7 +111,7 @@ Para hacer esto:
 
 ### Números y tolerancias
 
-`plantillaPGML-CampoRespuestaTolerancia.pg`
+Ver `plantillaPGML-CampoRespuestaTolerancia.pg`
 
 
 ### Expresiones algebraicas
@@ -125,12 +125,12 @@ Para hacer esto:
 
 ### Puntos
 
-`plantillaPGML-Puntos.pg`
+Ver `plantillaPGML-Puntos.pg`
 
 
 ### Listas (pueden ser de puntos, expresiones, números, etc.)
 
-`plantillaPGML-Listas.pg`
+Ver `plantillaPGML-Listas.pg`
 
 
 ### Más info sobre contextos y math objects
