@@ -160,7 +160,7 @@ https://webwork.maa.org/wiki/Category:MathObject_Classes
 *  Para ver distintas versiones ---> cambiar seed y volver a presionar el botón para ver el problema "ver---> ejecutar" (View --> Take Action)
 *  Ejercicio: Programar: "Soluciona z^2=25" con aleatorización.
 
-### Errores comunes
+### Errores comunes al agregar aleatorización
 
 Apenas uno comienza a trabajar con valores aleatorios, comienzan a aparecer problemas como 1x, 4+-3x, 0x, x^1,...
 
@@ -174,7 +174,12 @@ Apenas uno comienza a trabajar con valores aleatorios, comienzan a aparecer prob
 
 
 ### El error básico cuando se está aleatorizando:
-El error es empezar a programar un problema pensando en la aleatorización y no en "¿Cómo se debería ver el problema en WW?¿Cuáles y cuántos  son los campos de respuesta que voy a crear? -- ¡programar un problema en WW no es escribir el algoritmo de aleatorización!
+El error es empezar a programar un problema pensando en la aleatorización y no en el estudiante. Antes de aleatorizar, hay que pensar primero: 
+
+*  ¿Cómo se debería ver el problema en WeBWorK? 
+*  ¿Cuáles y cuántos  son los campos de respuesta que voy a crear?
+
+¡Programar un problema en WW no es escribir el algoritmo de aleatorización!
 
 
 ### Estar pendiente de cómo se ven las respuestas para los estudiantes
