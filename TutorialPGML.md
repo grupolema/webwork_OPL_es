@@ -29,13 +29,15 @@ Licencia de uso cc-by 4.0
 
 
 3. Agregar un blank problem a la tarea:
+   
    <img src="archivosInternos/imagenesTutorialPGML/image9.png" width="600" />
    <!-- ![](archivosInternos/imagenesTutorialPGML/image9.png) -->
 
 
 
 4. Entrar a editar el nuevo problema con el botón del lápiz:
-   <img src="archivosInternos/imagenesTutorialPGML/image5.png" width="800" />
+   
+   <img src="archivosInternos/imagenesTutorialPGML/image5.png" width="900" />
    <!-- ![](archivosInternos/imagenesTutorialPGML/image5.png) -->
 
 
@@ -53,7 +55,8 @@ Licencia de uso cc-by 4.0
 
 *  Preview con el botón "ver---> ejecutar" (View --> Take Action)
 *  Ejercicios básicos de escribir matemáticas en enunciado, agregar hint, escribir solución.
-   <img src="archivosInternos/imagenesTutorialPGML/image6.png" width="800" />
+   
+   <img src="archivosInternos/imagenesTutorialPGML/image6.png" width="600" />
 <!-- ![](archivosInternos/imagenesTutorialPGML/image6.png) -->
 
 
@@ -65,14 +68,16 @@ Hay que darle un nombre al archivo (que no quede como el nombre por defecto blan
 Para hacer esto:
 
 *  Nueva versión ---> un buen nombre (e.j. setEnrique/problema1.pg)
-   <img src="archivosInternos/imagenesTutorialPGML/image1.png" width="800" />
+   
+   <img src="archivosInternos/imagenesTutorialPGML/image1.png" width="600" />
 <!-- ![](archivosInternos/imagenesTutorialPGML/image1.png) -->
 
 
 
 
 ## Como guardar cambios una vez el archivo tenga el nombre correcto
-   <img src="archivosInternos/imagenesTutorialPGML/image7.png" width="800" />
+   
+   <img src="archivosInternos/imagenesTutorialPGML/image7.png" width="600" />
 <!-- ![](archivosInternos/imagenesTutorialPGML/image7.png) -->
 
 
@@ -80,13 +85,15 @@ Para hacer esto:
 ## Descargar los archivos .pg
 
 1. Ir a admin archivos y crear "archive" (tgzip)
+   
    <img src="archivosInternos/imagenesTutorialPGML/image4.png" width="800" />
 <!-- ![](archivosInternos/imagenesTutorialPGML/image4.png) -->
 
 
 
 2. Seleccionar el tgzip que se creó y descargarlo.
-   <img src="archivosInternos/imagenesTutorialPGML/image3.png" width="800" />
+   
+   <img src="archivosInternos/imagenesTutorialPGML/image3.png" width="600" />
 <!-- ![](archivosInternos/imagenesTutorialPGML/image3.png) -->
 
 
