@@ -29,7 +29,7 @@ Licencia de uso cc-by 4.0
 
 
 3. Agregar un blank problem a la tarea:
-   <img src="archivosInternos/imagenesTutorialPGML/image9.png" width="800" />
+   <img src="archivosInternos/imagenesTutorialPGML/image9.png" width="600" />
    <!-- ![](archivosInternos/imagenesTutorialPGML/image9.png) -->
 
 
