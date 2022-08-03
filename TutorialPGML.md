@@ -1,8 +1,8 @@
 # Formación en programación de problemas WebWorK
 
-Enrique Acosta
-Grupo LEMA, 2021
-www.grupolema.org
+Enrique Acosta  
+Grupo LEMA, 2021  
+www.grupolema.org  
 Licencia de uso cc-by 4.0
 
 **Nota:** los archivos de ejemplo `plantillaPGML-_____.pg` que se mencionan en este documento se encuentran en la carpeta [plantillas-machotes-PGML](plantillas-machotes-PGML).
