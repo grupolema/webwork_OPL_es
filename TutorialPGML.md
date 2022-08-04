@@ -215,18 +215,18 @@ https://webwork.maa.org/wiki/LinearApprox1
 
 ## Imágenes
 
-### Agregar una imagen propia a un problema.
+### Agregar una imagen "estática" propia a un problema.
 
-Formatos aceptados: png, gif, svg.
+Formatos aceptados: png, gif, jpeg. Se recomiendan los archivos PNG pues a menudo se ven mejor con cambios de escala.
 
-El archivo tiene que estar en la misma carpeta que el archivo con la imagen. Si si quiere agregar una imagen y el problema está en la carpeta `local/tarea3/problema2.pg`, entonces hay que crear una carpeta con el mismo nombre que el problema (en este caso `local/tarea/problema2`) y dentro de esta carpeta poner los archivos `problema2.pg` y `figura.png` que se va a agregar.
+Si quiere agregar una imagen `figura.png` y el problema está en la carpeta `local/tarea3/problema2.pg`, entonces hay que crear una carpeta con el mismo nombre que el problema (en este caso `local/tarea/problema2/`) y dentro de esta carpeta poner los archivos `problema2.pg` y `figura.png` que se va a agregar.
 
 Se ve así (en el file manager):
 
 <img src="archivosInternos/imagenesTutorialPGML/image11.png" width="500" />
 
 
-Para agregar la imagen en el problema se usa (note el `*` al final):
+Para agregar la imagen en el problema .pg se usa en PGML (note el `*` al final):
 ```
 [@ image("imagen.png", width=>180) @]*
 ```
@@ -238,7 +238,7 @@ o si se quiere que la imagen esté centrada, se usan los comandos `>>...<<` para
 
 
 ### Aleatorizar la imagen que se carga
-Si se tienen varias imágenes ya creadas y se quiere cambiar cuál se carga de acuerdo a la aleatorización del problema, lo que se debe hacer es en el código de aleatorización asegurarse que la versión quede cargada en una variable, digamos `$fig="nombreImagenEnAleatorizacion.png"` y usar
+Si se tienen varias imágenes ya creadas y se quiere cambiar cuál se carga de acuerdo a la aleatorización del problema, se debe ajustar el código de autorización para guardar el nombre de la imagen variablen que se va a cargar, digamos `$fig="nombreImagenEnAleatorizacion.png"` y usar
 
 ```
 >> [@ image("$fig", width=>180) @]* <<
@@ -251,7 +251,7 @@ Ver: https://webwork.maa.org/wiki/TikZImages
 
 
 ### Generar imágenes directamente con código pg - sistema básico
-Previo a WeBWorK 2.16, se debía utilizar `PGgraphmacros`. 
+Previo a WeBWorK 2.16, el único sistema para generar imágenes internamente en WeBWork usaba`PGgraphmacros`. Estas imágenes son de baja resolución y no permiten usar LaTeX.
 
 Ver
 https://webwork.maa.org/wiki/DynamicImages
