@@ -1,4 +1,4 @@
-# Formación en programación de problemas WebWorK
+Programación de problemas WebWorK usando PGML
 
 Enrique Acosta  
 Grupo LEMA, 2022  
