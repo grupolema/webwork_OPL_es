@@ -120,6 +120,7 @@ Ver `plantillaPGML-CampoRespuestaTolerancia.pg`
 *  variables distintas a x (ajustes a contextos): `plantillaPGML-ExpresionesVariables.pg`
 *  Más info de contextos: https://webwork.maa.org/wiki/Introduction_to_Contexts
 *  dominios para cambiar equivalencias algebraicas (y más sobre ajustes a contextos - deshabilitar funciones y operadores): `plantillaPGML-ExpresionesDominio.pg`
+*  variables con símbolos distintos (por ejemplo θ). Ver `plantillaPGML-ExpresionesConVariablesRaras.pg`
 *  más info sobre expresiones: https://webwork.maa.org/wiki/Formula_(MathObject_Class)
 
 ### Puntos
@@ -195,23 +196,13 @@ El error es empezar a programar un problema pensando en la aleatorización y no 
 `plantillaPGML-PartesSeparadas.pg`
 
 
-## mostrar números sin decimales:
+## Mostrar números sin decimales:
 En el contexto numérico, ajustar como se muestan las constantes, y crear el número como un objeto `Formula`. Ejemplo: 
 ```
 Context()->flags->set(reduceConstants => 0, reduceConstantFunctions => 0);
 $f = Formula("(1+sqrt(5))/2)");
 ```
 Esto hace que `$f` se muestre al estudiante como `1 + sqrt(5))/2` y no como `1.61803`.
-
-
-## PGML vs PG
-*  Wiki: https://webwork.maa.org/wiki/Authors
-*  subject area templates, ODE
-https://webwork.maa.org/wiki/GeneralSolutionODE1
-*  subject area templates, Calculus, linear approximation
-https://webwork.maa.org/wiki/LinearApprox1
-*  OPL y cómo uno puede "clonar" cualquier problema.
-
 
 ## Imágenes
 
@@ -278,11 +269,21 @@ https://webwork.maa.org/wiki/DynamicImages
 *  Revisar que el problema acepte todas las posibles respuestas y formas de respuesta válidas. Revisar varios seeds.
 *  Revisar que el problema no marca respuestas incorrectas como correctas.
 
+## PGML vs PG
+*  Wiki: https://webwork.maa.org/wiki/Authors
+*  subject area templates, ODE
+https://webwork.maa.org/wiki/GeneralSolutionODE1
+*  subject area templates, Calculus, linear approximation
+https://webwork.maa.org/wiki/LinearApprox1
+*  OPL y cómo uno puede "clonar" cualquier problema.
+
 ## Ejemplos más complejos
 
 *  Dropdown o Multiple Choice en le que la respuesta correcta es aleatoria: `plantillaPGML-RandomizacionesDropdownRespuestaCorrectaAleatoria.pg`
-*  Evaluar dos campos al tiempo, o en distinto orden
-*  StressTests (Consortium)
+
+*  Evaluar dos campos al tiempo, o en distinto orden:
+   -  PENDIENTE
+<!-- *  PENDIENTE: StressTests (Consortium)
    1.  Question with algorithmic graph in the statement
    2.  Question with algorithmic graph in the statement:
    3.  A question in which the student answer can have an arbitrary letter as a constant
@@ -292,6 +293,6 @@ https://webwork.maa.org/wiki/DynamicImages
    7.  Grade depending on other student responses
    8.  Check for a composition of functions
 *  Evaluar parametrizaciones de superficies (email Eric)
-
+ -->
 ### Un buen resumen corto con algunos temas más complejos:
 https://github.com/drdrew42/WeBWorK-problem-authoring/blob/main/intro.md 
