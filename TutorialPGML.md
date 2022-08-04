@@ -221,6 +221,8 @@ Formatos aceptados: png, gif, svg.
 
 El archivo tiene que estar en la misma carpeta que el archivo con la imagen. Si si quiere agregar una imagen y el problema está en la carpeta `local/tarea3/problema2.pg`, entonces hay que crear una carpeta con el mismo nombre que el problema (en este caso `local/tarea/problema2`) y dentro de esta carpeta poner los archivos `problema2.pg` y `figura.png` que se va a agregar.
 
+Se ve así (en el file manager):
+
 <img src="archivosInternos/imagenesTutorialPGML/image11.png" width="500" />
 
 
