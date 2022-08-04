@@ -213,12 +213,46 @@ https://webwork.maa.org/wiki/LinearApprox1
 *  OPL y cómo uno puede "clonar" cualquier problema.
 
 
-## Imágenes [falta]
+## Imágenes
 
-*  Estáticas - prácticas de fólderes asociados.
-*  Estáticas pero aleatorizadas
-*  Aleatorizadas - sistema básico
-*  Aleatorizadas - tikz en WeBWorK 2.16
+### Agregar una imagen propia a un problema.
+
+Formatos aceptados: png, gif, svg.
+
+El archivo tiene que estar en la misma carpeta que el archivo con la imagen. Si si quiere agregar una imagen y el problema está en la carpeta `local/tarea3/problema2.pg`, entonces hay que crear una carpeta con el mismo nombre que el problema (en este caso `local/tarea/problema2`) y dentro de esta carpeta poner los archivos `problema2.pg` y `figura.png` que se va a agregar.
+
+<img src="archivosInternos/imagenesTutorialPGML/image11.png" width="500" />
+
+
+Para agregar la imagen en el problema se usa (note el `*` al final):
+```
+[@ image("imagen.png", width=>180) @]*
+```
+o si se quiere que la imagen esté centrada, se usan los comandos `>>...<<` para centrar. Así:
+```
+>> [@ image("imagen.png", width=>180) @]* <<
+```
+
+
+
+### Aleatorizar la imagen que se carga
+Si se tienen varias imágenes ya creadas y se quiere cambiar cuál se carga de acuerdo a la aleatorización del problema, lo que se debe hacer es en el código de aleatorización asegurarse que la versión quede cargada en una variable, digamos `$fig="nombreImagenEnAleatorizacion.png"` y usar
+
+```
+>> [@ image("$fig", width=>180) @]* <<
+```
+
+### Usar TikZ para que WeBWorK genere imágenes (aleatorizadas o no) directamente dentro del código.pg
+A partir de WeBWorK 2.16, se puede agregar código TikZ directamente en los archivos pg para que WeBWorK genere la imagen cuando el estudiante carga el problema. Esto incluso permite agregar elementos aleatorizados a las imágenes (como números en variables pg).
+
+Ver: https://webwork.maa.org/wiki/TikZImages
+
+
+### Generar imágenes directamente con código pg - sistema básico
+Previo a WeBWorK 2.16, se debía utilizar `PGgraphmacros`. 
+
+Ver
+https://webwork.maa.org/wiki/DynamicImages
 
 
 ## Recomendaciones generales al programar
