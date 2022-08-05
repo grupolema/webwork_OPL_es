@@ -285,6 +285,8 @@ https://webwork.maa.org/wiki/LinearApprox1
 
 *  Evaluar dos campos al tiempo, o en distinto orden: `plantillaPGML-DosCamposSinOrden.pg`
 
+*  Aceptar todos los múltiplos negativos de una expresión: `plantillaPGML-ExpresionesInfinitasRespuestas.pg`
+
 <!-- *  PENDIENTE: StressTests (Consortium)
    1.  Question with algorithmic graph in the statement
    2.  Question with algorithmic graph in the statement:
