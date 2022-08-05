@@ -1,0 +1,98 @@
+#######################################
+##  Formación en programación de problemas para WeBWorK
+##  Grupo LEMA
+##  www.grupolema.org   
+##  Adaptado de un ejemplo de problema en la documentación 
+##  de PreTexT en:
+##  https://pretextbook.org/examples/showcase/html/webwork.html
+#######################################
+## DBsubject()
+## DBchapter()
+## DBsection()
+## Level()
+## KEYWORDS()
+## TitleText1('')
+## EditionText1()
+## AuthorText1('')
+## Section1('')
+## Problem1('')
+## Author()
+## Institution()
+
+
+########################################################################
+
+DOCUMENT();
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "PGML.pl",
+  "AnswerFormatHelp.pl",
+  "answerHints.pl",
+  "contextFraction.pl",
+  "PGcourse.pl",
+);
+
+############################################################
+# Header
+############################################################
+TEXT(beginproblem());
+$ShowPartialCorrectAnswers = 1; # gives students individual feedback on each answer blank 
+
+############################################################
+# PG Setup
+############################################################
+# Respuestas, contextos, randomización
+
+$a = Compute(random(2,6,1));
+do {$k = Compute(random(2,6,1))} until (gcd($a,$k)==1);
+$r = Compute(random(2,6,1));
+$c = $k*-$r;
+$b = $a*-$r+$k;
+$quadratic = Formula("$a x^2 + $b x + $c")->reduce;
+
+$evaluatorfora = $a->cmp()->withPostFilter(AnswerHints(
+    [-$a] =>
+    "¿Cuál es es signo?"));
+$evaluatorforb = $b->cmp()->withPostFilter(AnswerHints(
+    [-$b] =>
+    "¿Cuál es es signo?"));
+$evaluatorforc = $c->cmp()->withPostFilter(AnswerHints(
+    [-$c] =>
+    "¿Cuál es es signo?"));
+
+############################################################
+# Body
+############################################################
+
+BEGIN_PGML
+Identifica los coeficientes de la siguiente expresión ecuación cuadrática si se escribe en la forma [`ax^2+bx+c`].
+
+[```[$quadratic]```]
+
+
+
+[`a=`] [____]{$evaluatorfora}  
+[`b=`] [____]{$evaluatorforb}  
+[`c=`] [____]{$evaluatorforc}
+
+END_PGML
+
+############################################################
+# Solution
+############################################################
+
+BEGIN_PGML_SOLUTION
+El coeficiente de [`x^2`] es el valor de [`a\text{,}`] el coeficiente de [`x`] es el valor de [`b\text{,}`] y la constante es el valor de [`c\text{.}`]  _In this case_, son [`a = [$a]\text{,}`] [`b = [$b]\text{,}`] [`c = [$c]\text{.}`]
+
+END_PGML_SOLUTION
+
+############################################################
+# End Problem
+############################################################
+
+ENDDOCUMENT();
