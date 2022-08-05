@@ -1,0 +1,125 @@
+#######################################
+##  Formación en programación de problemas para WeBWorK
+##  Grupo LEMA
+##  www.grupolema.org   
+##  Adaptado de un ejemplo de problema en la documentación 
+##  de PreTexT en:
+##  https://pretextbook.org/examples/showcase/html/webwork.html
+#######################################
+## DBsubject()
+## DBchapter()
+## DBsection()
+## Level()
+## KEYWORDS()
+## TitleText1('')
+## EditionText1()
+## AuthorText1('')
+## Section1('')
+## Problem1('')
+## Author()
+## Institution()
+
+#########################################################
+
+DOCUMENT();
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "PGML.pl",
+  "AnswerFormatHelp.pl",
+  "PGgraphmacros.pl",
+  "PGcourse.pl",
+);
+
+############################################################
+# Header
+############################################################
+TEXT(beginproblem());
+$ShowPartialCorrectAnswers = 1; # gives students individual feedback on each answer blank
+
+############################################################
+# PG Setup Code
+############################################################
+$refreshCachedImages = 1;
+
+$fM7=-5/12*(-7)**2-5/3*(-7)+5;
+$fM2=-5/12*(-2)**2-5/3*(-2)+5;
+
+$graph1=init_graph(-7,$fM7,3,$fM2+0.5,axes=>[0,0],size=>[250,250]);
+add_functions($graph1, "-5/12*x^2-5/3*x+5 for x in <-7,3> using color:blue and weight:2");
+$graph1->lb( new Label(-6,0,'(-6,0)','black','left','top'));
+$graph1->lb( new Label(2,0,'(2,0)','black','right','top'));
+$graph1->stamps( closed_circle(-6,0,'blue') );
+$graph1->stamps( closed_circle(2,0,'blue') );
+$graph1->lb( new Label(3-0.4,0.3,'x','black','center','middle'));
+$graph1->lb( new Label(0.3,$fM2,'y','black','center','middle'));
+
+$xN=6;
+$xP=2;
+
+Context()->flags->set(reduceConstants => 0);
+
+$quadratic=Formula("-5/12*x^2-5/3*x +5");
+
+$customCheckerQuadratic = $quadratic -> cmp (
+    checker => sub {
+        my ($correct,$student,$ansHash) = @_;  # get correct and student MathObjects
+        return ((($student/$correct) > 0) and (($student/$correct)-> D == 0)); 
+    }
+);
+
+############################################################
+# Body
+############################################################
+
+BEGIN_PGML
+-----
+Interesante porque... acepta cualquier parabola correcta
+-----
+
+Encuentre al menos dos posibles fórmulas para una parabola como la que se muestra.
+
+>> [@image(insertGraph($graph1), width=>300)@]*  <<
+
+[`y=`] [_]{$customCheckerQuadratic}{25} [@AnswerFormatHelp('formulas')@]*
+
+END_PGML
+
+############################################################
+# Hint
+############################################################
+#Set value of $showHint in PGcourse.pl for course-wide attempt threshhold for revealing hints
+
+BEGIN_PGML_HINT
+
+
+END_PGML_HINT
+
+############################################################
+# Solution
+############################################################
+
+BEGIN_PGML_SOLUTION
+Los ceros están en [`x=-[$xN]`] y [`x=[$xP]\text{,}`] entonces, la cuadrática debe tener la siguiente forma:
+
+[```y=a(x+[$xN])(x-[$xP]).```]
+
+No hay condición sobre la altura de la parábola, entonces funciona cualquier de [`a`] siempre y cuando sea negativo (para que la parábola abra hacia abajo). Así, dos posibles formulas son:
+
+[```y=-(x+[$xN])(x-[$xP]).```]
+
+o 
+
+[```y=-3(x+[$xN])(x-[$xP]).```]
+
+END_PGML_SOLUTION
+
+############################################################
+# End Problem
+############################################################
+
+ENDDOCUMENT();
