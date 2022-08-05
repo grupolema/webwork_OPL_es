@@ -281,6 +281,8 @@ https://webwork.maa.org/wiki/LinearApprox1
 
 *  Dropdown o Multiple Choice en le que la respuesta correcta es aleatoria: `plantillaPGML-RandomizacionesDropdownRespuestaCorrectaAleatoria.pg`
 
+*  Mensajes para el estudiante de acuerdo a lo que responden: `plantillaPGML-MensajesAdaptativos.pg`
+*
 *  Evaluar dos campos al tiempo, o en distinto orden:
    -  PENDIENTE
 <!-- *  PENDIENTE: StressTests (Consortium)
