@@ -41,7 +41,7 @@ loadMacros(
 # Header
 ############################################################
 TEXT(beginproblem());
-$ShowPartialCorrectAnswers = 1; # gives students individual feedback on each answer blank 
+$ShowPartialCorrectAnswers = 1; # gives students individual feedback on each answer blank
 
 ############################################################
 # PG Setup
