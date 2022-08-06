@@ -287,6 +287,12 @@ https://webwork.maa.org/wiki/LinearApprox1
 
 *  Aceptar todos los múltiplos negativos de una expresión: `plantillaPGML-ExpresionesInfinitasRespuestas.pg`
 
+*  Evaluar un ángulo módulo 2pi: `plantillaPGML-numerosModulo2pi.pg`
+
+*  Evaluar ecuaciones equivalentes, no permitir algunas operaciones en la repuesta, y cambiar la definición de log (que no sea ln): `plantillaPGML-EcuacionesOperadoresYLogs.pg`
+
+*  Evaluar vectores paralelos: `plantillaPGML-vectoresParalelos.pg`
+
 <!-- *  PENDIENTE: StressTests (Consortium)
    1.  Question with algorithmic graph in the statement
    2.  Question with algorithmic graph in the statement:

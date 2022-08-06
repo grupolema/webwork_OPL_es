@@ -1,0 +1,102 @@
+##  DESCRIPTION
+##  Formación en programación de problemas para WeBWorK
+##  Grupo LEMA
+##  www.grupolema.org
+##  ENDDESCRIPTION
+
+##KEYWORDS('','')
+
+## DBsubject('')
+## DBchapter('')
+## DBsection('')
+## Date('6/3/2002')
+## Author('Enrique Acosta')
+## Institution('Grupo LEMA')
+## TitleText1('')
+## EditionText1('')
+## AuthorText1('')
+## Section1('')
+## Problem1('')
+
+########################################################################
+
+DOCUMENT();
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "PGML.pl",
+  "AnswerFormatHelp.pl",
+  "contextFraction.pl",
+  "parserVectorUtils.pl",
+  "PGcourse.pl",
+);
+
+############################################################
+# Header
+############################################################
+COMMENT('Authored in PreTeXt PreTeXt');
+TEXT(beginproblem());
+
+############################################################
+# PG Setup Code
+############################################################
+
+Context("Vector");
+
+# Descomentar la siguiente línea si se quiere usar la notacion ijk.
+# Context()->flags->set(ijk=>1);
+
+$a=Compute(random(-9,9,1));
+do{$b=Compute(random(-9,9,1))} until ($a != $b);
+do{$c=Compute(random(-9,9,1))} until (($c != $a) and ($c != $b));
+
+
+$N=Vector($a,$b,$c);
+$evaluatorforN=$N->cmp(parallel => 1);
+
+
+############################################################
+# Body
+############################################################
+
+BEGIN_PGML
+-----
+### Interesante porque... 
+*  Acepta cualquier vector paralelo.
+
+-----
+
+Escribe un vector paralelo a [`[$N]`]. Recuerda [@AnswerFormatHelp('vectors')@]*
+
+Vector paralelo: [_]{$evaluatorforN}{20} [@AnswerFormatHelp('vectors')@]*
+
+END_PGML
+
+############################################################
+# Hint
+############################################################
+#Set value of $showHint in PGcourse.pl for course-wide attempt threshhold for revealing hints
+
+BEGIN_PGML_HINT
+
+Hint
+
+END_PGML_HINT
+
+############################################################
+# Solution
+############################################################
+
+BEGIN_PGML_SOLUTION
+
+END_PGML_SOLUTION
+
+############################################################
+# End Problem
+############################################################
+
+ENDDOCUMENT();
