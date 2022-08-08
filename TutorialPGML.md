@@ -123,6 +123,7 @@ Ver `plantillaPGML-CampoRespuestaTolerancia.pg`
 *  variables con símbolos distintos (por ejemplo θ). Ver `plantillaPGML-ExpresionesConVariablesRaras.pg`
 *  Expresiones con dominio entero (por ejemplo, para poder evaluar expresiones con (-1)^n, o n! de forma correcta: `plantillaPGML-ExpresionesDominioEnteros.pg`
 *  más info sobre expresiones: https://webwork.maa.org/wiki/Formula_(MathObject_Class)
+*  y un link especifico sobre `flags` para contextos: https://webwork.maa.org/wiki/Context_flags
 
 ### Puntos
 
