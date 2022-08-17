@@ -1,12 +1,4 @@
-Para regenerar el tgz, en MacOS usar el commando:
-
-```bash
-tar -cvzf OrientationSpanish.tgz setOrientationSpanish setOrientationSpanish.def
-```
-
-## Sobre esta tarea
-
-Para usar esta tarea:
+## Para usar esta tarea:
 
 *  Descargar el archivo .tgz.
 *  Subirlo al curso.
@@ -25,4 +17,10 @@ Desarrollado por el Grupo LEMA (www.grupolema.org), basado en una tarea de orien
 
 La carpeta `unused` contiene problemas de la tarea original de Union College que no fueron usados en esta adaptación.
 
+## Para regenerar el tgz:
 
+Para regenerar el tgz, en MacOS usar el commando:
+
+```bash
+tar -cvzf OrientationSpanish.tgz setOrientationSpanish setOrientationSpanish.def
+```
