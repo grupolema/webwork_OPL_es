@@ -289,11 +289,21 @@ https://webwork.maa.org/wiki/LinearApprox1
 
 *  Aceptar todos los múltiplos negativos de una expresión: `plantillaPGML-ExpresionesInfinitasRespuestas.pg`
 
+*  Evaluador personalizado de números (por ejemplo, marcar como correctos solo los números para los cuales 4*sin(x) es distinto de sin(4*x)). Ver `plantillaPGML-evaluadorPersonalizadoDeNumeros.pg`
+
 *  Evaluar un ángulo módulo 2pi: `plantillaPGML-numerosModulo2pi.pg`
 
 *  Evaluar ecuaciones equivalentes, no permitir algunas operaciones en la repuesta, y cambiar la definición de log (que no sea ln): `plantillaPGML-EcuacionesOperadoresYLogs.pg`
 
 *  Evaluar vectores paralelos: `plantillaPGML-vectoresParalelos.pg`
+
+*  Cambiar el formato con el que se muestran números (WW muestra por defecto 10^6 en vez de 1000000). Ver `plantillaPGML-FormatoNumeros.pg`
+
+*  Evaluar la expresión a*b^(x) con tolerancias especificas (y distintas) para a y para b. Ver `plantillaPGML-ToleranciaParametros`
+
+*  Deshabilitar `e^` pero permitir otros exponentes. Ver `plantillaPGML-ToleranciaParametros.pg` y https://webwork.maa.org/wiki/LimitedPowers.
+
+
 
 <!-- *  PENDIENTE: StressTests (Consortium)
    1.  Question with algorithmic graph in the statement
