@@ -4,7 +4,7 @@
 *  Subirlo al curso con el `Explorador de archivos`:
    -  Ir al `Explorador de archivos`
    -  Seleccionar el tgz desde el Explorador de archivos con [Choose file] y presionar [Upload] 
-*  Importar el la tarea con `setOrientationSpanish.def`:
+*  Importar la tarea con `setOrientationSpanish.def`:
    -  Ir al editor de tareas y seleccionar la pestaña [Import / Importar].
    -  Seleccionar "import single set"
    -  En [tr: Import from where?] seleccionar `setOrientationSpanish.def`
