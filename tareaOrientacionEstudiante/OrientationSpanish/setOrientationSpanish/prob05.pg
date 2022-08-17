@@ -1,0 +1,97 @@
+##  DESCRIPTION
+##  Grupo LEMA, 2022
+##  www.grupolema.org
+##  Basado en una tarea de orientación de Union College
+##  ENDDESCRIPTION
+
+
+########################################################################
+DOCUMENT();        # This should be the first executable line in the problem.
+########################################################################
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+  "PGstandard.pl",
+  "PGchoicemacros.pl",
+  "PGML.pl",
+  "AnswerFormatHelp.pl",
+);
+
+############################################################
+# Header
+############################################################
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+############################################################
+# PG Setup
+############################################################
+# Respuestas, contextos, randomización
+
+Context()->strings->add(WeBWorK => {});
+$WW=String("WeBWorK");
+
+Context("Numeric");
+Context()->variables->add(T => "Real");
+Context()->variables->add(y => "Real");
+
+$ans1=Compute("T/(2*T+6)");
+$ans2=Compute("1/(2*(x-5))");
+$ans3=Compute("(2*x-3)^4");
+
+
+##############################################
+
+BEGIN_PGML
+
+
+>> ## El orden de operaciones con paréntesis ## <<
+
+
+Una parte muy importante del orden de operaciones es que: 
+
+    _Siempre se calcula lo que está adentro de unos paréntesis antes de operarlo con el resto de una expresión._
+
+[$WW] usa esta regla al interpretar tus respuestas, por lo cual es muy importante que le pongas paréntesis a las partes que lo necesitan.
+
+### Ejemplo
+
+Puede que en una hoja de papel escribas "1/x+1" cuando en realidad tu intención es escribir [``\frac{1}{x+1}``], y esto es incorrecto ya que la expresión "1/x+1" en realidad significa [``\frac{1}{x} + 1``] (¡porque primero se hace la división y después la suma!).
+
+Si quieres ingresar algo que signifique [``\frac{1}{x+1}``], debes escribir 1/(x+1).  ¡Para eso es que sirven los paréntesis! 
+
+Esto también es cierto en las matemáticas escritas a mano, entonces puedes tomar esto como una oportunidad para afinar tus habilidades para escribir de manera correcta en matemáticas.
+
+
+### El orden de operaciones (versión 2)
+
+Si no hay funciones (como "sin" o "log"), entonces  [$WW] calcula el valor de tu respuesta así:
+
+*  primero calcula todo lo que está dentro de paréntesis (usando el orden de operaciones)
+*  después se hacen los exponenciales
+*  después las multiplicaciones y divisiones (de izquierda a derecha)
+*  y después las sumas y restas (de izquierda a derecha). 
+
+--------------
+
+### Práctica
+
+Ingresa las siguientes expresiones teniendo en cuenta el orden de operaciones (incluyendo paréntesis).
+
+Antes de enviar tus respuestas, usa el botón "Vista previa de mis respuestas" para ver como está interpretando [$WW] lo que escribes (la vista previa aparece justo al lado de tu respuesta en la parte de arriba). 
+
+[``[$ans1] = ``][______]{$ans1} [@ AnswerFormatHelp("formulas") @]*
+
+[``[$ans2] = ``][______]{$ans2} [@ AnswerFormatHelp("formulas") @]*
+
+[``[$ans3] = ``][______]{$ans3} [@ AnswerFormatHelp("formulas") @]*
+
+Recuerda que las vistas previas no cuentan como intentos ni afectan el límite de intentos. El número de intentos baja solo cuando presionas "Enviar mis respuestas".
+
+END_PGML
+
+##############################################
+
+ENDDOCUMENT();        # This should be the last executable line in the problem.

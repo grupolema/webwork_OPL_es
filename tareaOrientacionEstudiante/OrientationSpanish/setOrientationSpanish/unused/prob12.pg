@@ -1,0 +1,117 @@
+##  DESCRIPTION
+##  Grupo LEMA, 2022
+##  www.grupolema.org
+##  Basado en una tarea de orientación de Union College
+##  ENDDESCRIPTION
+
+
+########################################################################
+DOCUMENT();        # This should be the first executable line in the problem.
+########################################################################
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "PGunion.pl",
+  "parserVectorUtils.pl",
+  "parserOrientation.pl",
+  "PGcourse.pl",
+  "AnswerFormatHelp.pl",
+);
+
+$showPartialCorrectAnswers = 1;
+
+TEXT(beginproblem());
+Title("Puntos y vectores");
+
+##############################################
+
+Context("Vector");
+
+$p0 = non_zero_point2D();
+$p1 = $p0 + 2*non_zero_point2D(2,2,1);
+
+
+
+$P = non_zero_point3D();
+
+$LANGLE = HTML('&lt;',"\char60 ");
+$RANGLE = HTML('&gt;',"\char62 ");
+
+Context()->flags->set(ijk=>1);
+Context()->texStrings;
+BEGIN_TEXT
+
+Otros problemas pueden involucrar vectores. $WW permite que uses vectores como listas entre paréntesis triangulares \{student $LANGLE\} y \{student $RANGLE\}, o como sumas de múltiplos de los vectores unitarios \(\{i\}\), \(\{j\}\) y \(\{k\}\), que se ingresan como \{student "i"\}, \{student "j"\} y
+\{student "k"\}. Por ejemplo, \{student "${LANGLE}1,3,-2${RANGLE}"\}
+es el mismo vector que \{student "i+3j-2k"\}.
+
+$PAR
+
+$BBLOCKQUOTE
+¿Qué vector va desde el origen hasta el punto \($P\)?  \{ans_rule(20)\} \{AnswerFormatHelp("vectors")\}.
+$EBLOCKQUOTE
+$PAR
+END_TEXT
+Context()->normalStrings;
+Context()->flags->set(ijk=>0);
+
+ANS(Vector($P)->cmp);
+
+##################################################
+
+$v0 = non_zero_vector3D();
+$v1 = non_zero_vector3D();
+
+$SPACING = HTML('&nbsp;&nbsp;');
+$BNOBR = HTML('<NOBR>');
+$ENOBR = HTML('</NOBR>');
+
+Context()->texStrings;
+BEGIN_TEXT
+
+Igual que con números, $WW te permite ingresar puntos o vectores que incluyan operaciones. Por ejemplo
+$PAR
+$BCENTER
+$BNOBR\{student "${LANGLE}1-(-3),2-sqrt(4),6/2${RANGLE}"\}$ENOBR
+${SPACING} y ${SPACING}
+$BNOBR\{student "[1-(-3)]i + [2-sqrt(4)]j + (6/2)k"\}$ENOBR
+$ECENTER
+$PAR
+ambas son el vector \(\{Vector(4,0,3)\}\), y puedes usar
+$BNOBR\{student "${LANGLE}1,0,-1${RANGLE} + ${LANGLE}2,-2,3${RANGLE}"\}$ENOBR
+en una pregunta cuya respuesta es el vector \(\{Vector(3,-2,2)\}\).
+$PAR
+
+$BBLOCKQUOTE
+Escribe \(\{$v0+$v1\}\) como una suma de dos vectores:  \{ans_rule(30)\}\{AnswerFormatHelp("vectors")\}.
+$EBLOCKQUOTE
+
+END_TEXT
+Context()->normalStrings;
+
+#
+#  Check that the result actually IS a sum (or difference).
+#
+sub checkAdd {
+  my $ans = shift;
+  if ($ans->{score} == 1 && !$ans->{isPreview}) {
+    my $item = $ans->{student_formula}->{tree};
+    $ans->{correct_value}->cmp_Error
+      ($ans,"Your answer is not a sum of vectors")
+         unless $item->class eq 'BOP' && 
+         ($item->{bop} eq '+' || $item->{bop} eq '-');
+  }
+  return $ans;
+}
+
+my $check = ($v0+$v1)->cmp;
+$check->install_post_filter(~~&checkAdd);
+ANS($check);
+
+##################################################
+
+ENDDOCUMENT();        # This should be the last executable line in the problem.

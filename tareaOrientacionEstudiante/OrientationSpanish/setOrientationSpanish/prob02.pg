@@ -1,0 +1,78 @@
+##  DESCRIPTION
+##  Grupo LEMA, 2022
+##  www.grupolema.org
+##  Basado en una tarea de orientación de Union College
+##  ENDDESCRIPTION
+
+
+########################################################################
+DOCUMENT();        # This should be the first executable line in the problem.
+########################################################################
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+  "PGstandard.pl",
+  "PGML.pl",
+);
+
+############################################################
+# Header
+############################################################
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+############################################################
+# PG Setup
+############################################################
+# Respuestas, contextos, randomización
+
+Context()->strings->add(WeBWorK => {});
+$WW=String("WeBWorK");
+
+$ans=Compute("x+3");
+
+##############################################
+
+BEGIN_PGML
+
+
+>> ## Enviar respuestas en [$WW] ## <<
+
+Los botones en la parte de abajo son con los que envías tus respuestas. Nada de lo que escribas será calificado hasta que presiones uno de estos botones.
+
+
+
+### Botón "Enviar mis respuestas"
+
+Hace que [$WW] evalúe tus respuestas y te informe sobre el puntaje que obtuviste. 
+
+Los resultados se muestra encima de esta caja. 
+
+Intentalo escribiendo x+3 acá [________]{$ans}{10} y después presiona el botón "Enviar mis respuestas".
+
+Por lo general tienes más de un intento para enviar tus respuestas, entonces no tengas miedo de presionar el botón incluso si no has respondido en todos los campos de respuesta disponibles. Intenta ingresar algo distinto a [$ans] en el campo de respuesta de arriba y vuelve a presionar el botón "Enviar mis respuestas".
+
+
+### Botón "Vista previa de mis respuestas"
+
+Hace que [$WW] muestre, en la parte superior, lo que entiende que ingresaste. Úsalo para identificar posibles errores en lo que ingresaste y para asegurarte que [$WW] entiende lo que querías ingresar.
+
+Inténtalo escribiendo x/2x+1 en este campo [_____]{"x/2x+1"}{10} y presionando "Vista previa de mis respuestas" (si la vista previa no coincide con lo que pensaste que te iba a mostrar, es porque deber repasar el "orden de operaciones", que miraremos en un problema más adelante).
+
+Presionar este botón no tiene ningún efecto sobre el número de intentos.
+
+### Botón "Ver Respuestas Correctas"
+
+Si la fecha de entrega ya pasó, puedes presionar el botón "Ver Respuestas Correctas" para que cuando presiones  "Enviar mis respuestas", también se te muestre la que era la respuesta correcta del problema.
+
+### Debajo de estos botones
+
+Debajo del problema y los botones puedes ver cuántos intentos tienes disponibles. 
+
+END_PGML
+
+##############################################
+
+ENDDOCUMENT();        # This should be the last executable line in the problem.

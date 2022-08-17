@@ -1,0 +1,74 @@
+##  DESCRIPTION
+##  Grupo LEMA, 2022
+##  www.grupolema.org
+##  Basado en una tarea de orientación de Union College
+##  ENDDESCRIPTION
+
+
+########################################################################
+DOCUMENT();        # This should be the first executable line in the problem.
+########################################################################
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+  "PGstandard.pl",
+  "PGchoicemacros.pl",
+  "PGunion.pl",
+  "parserOrientation.pl",
+  "choiceUtils.pl",
+  "PGcourse.pl",
+);
+
+TEXT(beginproblem());
+Title("Matching Lists in $WW");
+
+##############################################
+
+$a = random(-10,10,1);
+$b = random(1,3,1);
+
+$ml = new_match_list();
+$ml->rf_print_q(~~&alt_print_q);
+$ml->rf_print_a(~~&alt_print_a);
+$ml->{separation} = 5;
+
+$ml->qa(
+  "\(x\) es estrictamente menor que \($a\)",                "\(x < $a\)",
+  "\(x\) es un número real",                 "\(-\infty < x < \infty\)",
+  "\(x\) es estrictamente mayor que \($a\)",             "\($a < x\)",
+  "\(x\) es menor o igual que \($a\)",    "\(x \leq $a\)",
+  "\(x\) es mayor o igual que \($a\)", "\(x \geq $a\)",
+  "La distancia de \(x\) a \($a\) es máximo $b",
+     "\(|x - $a| \leq $b\)",
+  "La distancia de \(x\) a \($a\) es mayor que $b",
+     "\(|x - $a| > $b\)"
+);
+
+$ml->choose(5);
+
+##################################################
+
+BEGIN_TEXT
+
+Empareja los enunciados 1--5 con las desigualdades. Escribe la letra que corresponde a cana numeral.
+$PAR
+
+\{ColumnMatchTable($ml,indent => 30)\}
+$PAR
+
+END_TEXT
+
+ANS(str_cmp($ml->ra_correct_ans));
+install_problem_grader(~~&std_problem_grader);
+$showPartialCorrectAnswers = 0;
+
+BEGIN_TEXT
+
+En problemas de emparejar como este, $WW solo te va a decir si todas las respuestas están bien o no. Si no todas están bien, $WW no te va a decir cuales están correctas o incorrectas.
+$PAR 
+
+END_TEXT
+
+ENDDOCUMENT();        # This should be the last executable line in the problem.

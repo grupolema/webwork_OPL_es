@@ -1,0 +1,126 @@
+##  DESCRIPTION
+##  Grupo LEMA, 2022
+##  www.grupolema.org
+##  Basado en una tarea de orientación de Union College
+##  ENDDESCRIPTION
+
+
+########################################################################
+DOCUMENT();        # This should be the first executable line in the problem.
+########################################################################
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+  "PGstandard.pl",
+  "contextLimitedNumeric.pl",
+  "PGML.pl",
+  "AnswerFormatHelp.pl",
+);
+
+
+############################################################
+# Header
+############################################################
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+############################################################
+# PG Setup
+############################################################
+# Respuestas, contextos, randomización
+
+Context()->strings->add(WeBWorK => {});
+$WW=String("WeBWorK");
+
+Context("Numeric");
+$ans1=Compute("16");
+$ans2=Compute("100");
+
+$a = random(1,5,1);
+$b = random(1,5,1);
+$c = random(1,3,1) * 2;
+$d = random(1,5,1);
+
+Context()->variables->are(t => "Real");
+$ans4=Formula("t^3");
+
+Context("LimitedNumeric");
+$ans3 = $c*($a - $b) - ($c - $d);
+
+
+
+##############################################
+
+
+BEGIN_PGML
+
+
+>> ## Ingresar tus respuestas ## <<
+
+### Símbolos de las operaciones
+
+Estos son los símbolos de operaciones que usa [$WW] (son convenciones que usa la mayoría del software):
+
+\+ : Suma. Ejemplo: 3+4 = 7  
+\- : Resta. Ejemplo: 3-4 = -1  
+\* : Multiplicacion. Ejemplo: 3*4 = 12  
+\/ : División . Ejemplo: 3/4 = 0.75  
+\^ o \*\* : Exponenciación. Ejemplo: 3^4 = 81, o 3\*\*4 = 81  
+
+### Por lo general no tienes que simplificar respuestas
+
+¡[$WW] se encarga de la simplificacion!
+
+Por ejemplo, los siguientes campos de respuesta están esperando que ingreses 16 como respuesta. Intenta poner el 16 de distintas formas, como 7+9, 18-2, 8*2, 32/2, 4^2 y después envía tu respuesta.
+
+[______]{$ans1}{15} [@ AnswerFormatHelp("numbers") @]*  
+[______]{$ans1}{15} [@ AnswerFormatHelp("numbers") @]*  
+[______]{$ans1}{15} [@ AnswerFormatHelp("numbers") @]*  
+[______]{$ans1}{15} [@ AnswerFormatHelp("numbers") @]*
+
+### Pero a veces sí debes simplificar...
+
+En algunas ocasiones, [$WW] puede que te pida que calcules el valor de tu respuesta como un solo número al ingresarlo. El problema te advertirá al respecto. 
+
+Por ejemplo: calcula el valor de [`[$c]([$a] - [$b]) - ([$c] - [$d])`] e ingresalo en el siguiente espacio en blanco:
+
+[______]{$ans3}{15} (no acepta [$c]([$a] - [$b]) - ([$c] - [$d]) como respuesta, pero sí [$ans3])
+
+### Multiplicación "invisible"
+
+[$WW] también entiende que dos cantidades escritas una al lado de la otra se deben mutliplicar. 
+
+Por ejemplo, puedes ingresar (9)(7) en vez de 63. 
+
+Esto se usa a menudo cuando una cantidad es un número y la otra cantidad es una variable o una función. Por ejemplo, 2x significa 2*x, y 3sin(5x) significa 3*sin(5*x).  
+
+El siguiente campo de respuesta está esperando que ingreses 100.  
+Intenta escribir 4*(30-5) y envía tu respuesta.
+
+[______]{$ans2}{15} [@ AnswerFormatHelp("numbers") @]*
+
+
+### Es importante la letra que uses. 
+
+Si se te pide algo con una [`t`], [$WW] no te aceptará respuestas otra variable (como una [`x`], por ejemplo). 
+
+[$WW] también considera distintas las letras mayúsculas y minúsculas (no uses una T si se te pide que trabajes con una t).
+
+El siguiente espacio de respuesta está esperando la expresión [`t^3`], que puedes ingresar como t^3 o como t\*\*3.  
+Intenta ingresar x^3 o T^3 y envía tus respuestas para ver los mensajes de error que te da el sistema.
+
+[`t^3=`][_________]{$ans4} [@ AnswerFormatHelp("formulas") @]*
+
+Ahora ingresa t^3 y vuelve a enviar tus respuestas para que te den los puntos de esta parte del problema.
+
+-------
+
+Asegurate de que [$WW] te marque todas las respuestas como correctas antes de seguir con el siguiente problema.
+
+END_PGML
+ 
+# ##################################################
+# 
+ENDDOCUMENT();        # This should be the last executable line in the problem.

@@ -1,0 +1,47 @@
+DOCUMENT();        # This should be the first executable line in the problem.
+
+loadMacros(
+  "PGstandard.pl",
+   "PGbasicmacros.pl",
+   "PGcourse.pl",
+);
+
+$WW = "WeBWorK";
+
+if ($displayMode eq 'TeX') {
+
+TEXT($BEGIN_ONE_COLUMN,
+    '\noindent{\large\bf '.$studentName.'}\hfill{\large\bf '.$course.'}',
+    '\par\noindent',
+"
+Esta tarea de $WW se diseño para ayudarte a entender los aspectos básicos de uso de $WW.
+",
+     "Tarea de $WW número $setNumber cierra el $formattedDueDate.",
+     $END_ONE_COLUMN
+);
+
+} else {
+
+BEGIN_TEXT
+
+${BBOLD}Orientación a WeBWorK${EBOLD}
+
+$PAR
+
+Resumen de esta tarea (para que lo guardes): 
+\{ htmlLink(qq!http://webwork.maa.org/wiki/Available_Functions!,"functions and symbols") \}.
+
+$PAR
+
+Esta tarea de $WW se diseño para ayudarte a entender los aspectos básicos de uso de $WW.
+
+$PAR
+
+Desarrollado por el Grupo LEMA, basado en una tarea de orientación de Union College.
+
+
+END_TEXT
+
+}
+
+ENDDOCUMENT();        # This should be the last executable line in the problem.

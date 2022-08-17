@@ -1,0 +1,64 @@
+##  DESCRIPTION
+##  Grupo LEMA, 2022
+##  www.grupolema.org
+##  Basado en una tarea de orientación de Union College
+##  ENDDESCRIPTION
+
+
+DOCUMENT();        # This should be the first executable line in the problem.
+########################################################################
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "parserVectorUtils.pl",
+  "PGML.pl",
+  "AnswerFormatHelp.pl",
+);
+
+############################################################
+# Header
+############################################################
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+############################################################
+# PG Setup
+############################################################
+# Respuestas, contextos, randomización
+
+Context()->strings->add(WeBWorK => {});
+$WW=String("WeBWorK");
+
+Context("Vector");
+$p0 = non_zero_point2D();
+$p1 = $p0 + 2*non_zero_point2D(2,2,1);
+$p2 = ($p0+$p1)/2;
+
+
+##############################################
+
+
+BEGIN_PGML
+
+
+>> ## Puntos ## <<
+
+Algunos problemas te van a pedir que respondas con un punto. Para responder en estas preguntas, ingresas los puntos tal como te imaginarías: para ingresar el punto [`(2,-3)`] escribes (2,-3), que  es el punto con coordenada [`x`] igual a [`2`] y coordenada [`y`] igual a -3.
+
+----- 
+
+### Práctica
+
+¿Cuál punto está justo en la mitad del camino entre [`[$p0]`] y [`[$p1]`]?  
+
+[_____]{$p2}{15} [@ AnswerFormatHelp("points") @]*
+
+END_PGML
+
+##################################################
+
+ENDDOCUMENT();        # This should be the last executable line in the problem.

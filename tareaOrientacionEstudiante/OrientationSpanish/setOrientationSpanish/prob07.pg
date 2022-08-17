@@ -1,0 +1,138 @@
+##  DESCRIPTION
+##  Grupo LEMA, 2022
+##  www.grupolema.org
+##  Basado en una tarea de orientación de Union College
+##  ENDDESCRIPTION
+
+
+########################################################################
+DOCUMENT();        # This should be the first executable line in the problem.
+########################################################################
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "PGML.pl",
+  "AnswerFormatHelp.pl",
+);
+
+############################################################
+# Header
+############################################################
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+############################################################
+# PG Setup
+############################################################
+# Respuestas, contextos, randomización
+
+Context()->strings->add(WeBWorK => {});
+$WW=String("WeBWorK");
+
+Context("Numeric");
+Context("Numeric")->variables->are(
+  u => ['Real',limits=>[0.1,1.5]],
+  x => ['Real',limits=>[3.75,6]],
+  y => ['Real',limits=>[0,6]]
+); 
+
+$ans0=Compute("-1");
+$ans1=Compute("sqrt(y^2+1)");
+$ans2=Compute("1/tan(u)");
+$ans3=Compute("(sin(x)-cos(x))/sqrt(2*x-7)");
+
+##############################################
+
+BEGIN_PGML
+
+
+>> ## Constantes y funciones en [$WW] ## <<
+
+
+### Constantes comunes
+
+*  [$WW] sabe el valor de [`\pi`], y lo puedes ingresar escribiendo pi. 
+
+*  Igualmente, [$WW] sabe el valor de [`e`] (la base del logaritmo natural,
+[`e\approx 2.71828`]), que puedes ingresar escribiendo e.
+
+
+### Funciones comunes
+
+[$WW] también conoce muchas funciones comunes. Esta es una lista parcial. 
+
+Nota que todas las funciones empiezan con una letra minúscula. Usar mayúsculas produce mensajes de error.
+
+
+#### Raíces
+
+*  La raiz cuadrada [`\sqrt x`] se escribe sqrt(x) o x^(1/2).
+
+*  La raiz cúbica [`\sqrt[3] x`] se escribe x^(1/3).
+
+
+#### Funciones trigonométricas
+
+*  [$WW] sabe sobre sin(x), cos(x), tan(x), arcsin(x), arccos(x), arctan(x) y otras funciones trigonométricas y sus inversas.
+
+*  [$WW] *siempre usa radianes* para estas funciones trigonométricas.
+
+*  [$WW] evalúa estas funciones trigonometricas automáticamente en muchas situaciones.
+   
+    Por ejemplo, el siguiente campo de respuesta espera el valor [`-1`]. Como [`\cos(\pi) = -1`], cos(pi) es una respuesta correcta. ¡Intentalo!
+
+    Ingresa -1 de cualquier forma acá (intenta ingresar cos(pi)):[_____]{$ans0}{10} y después envía tu respuesta.
+
+
+#### Exponenciales
+
+*  La función exponencial con base [`e`] se puede ingresar como e^x o como exp(x). 
+
+*  La segunda opción es útil cuando el exponente es complejo. Por ejemplo,  [`e^{1+(x^2+3)/(x+1)}`] se puede ingresar así: [| exp(1+(x^2+3)/(x+1)) |].
+
+#### Valor absoluto
+
+La función valor absoluto, [`|x|`], se ingresa con |x| o con abs(x).
+
+#### Logaritmos
+
+*  Para ingresar el logaritmo natural de [`x`], escribe ln(x). 
+
+*  Para ingresar el logaritmo base [`10`] de [`x`], usa log10(x). 
+
+*  Nota: el significado de log(x) en el curso dependerá de tu instructor: puede significar el logaritmo natural o el logaritmo en base 10. La opción por defecto en [$WW] es que log(x) y ln(x) son lo mismo.
+
+
+#### Funciones trigonométricas inversas
+
+La función arco seno, [`\sin^{-1}(x)`], se ingresa escribiendo arcsin(x) o asin(x) o sin^(-1)(x). Nota que esto *_no es_* lo mismo que (sin(x))^(-1), que significa [`\displaystyle\frac{1}{\sin(x)}`].
+
+Las otras funciones inversas trigonométricas funcionan igual.
+
+
+--------------
+
+### Práctica
+
+Practica ingresando las siguientes funciones. 
+
+Recuerda que por el *orden de operaciones*, puede ser necesario agregar paréntesis que no se ven en la expresión que se muestra. ¡Usa el botón de vista previa!
+
+
+[``[$ans1]=``][_______]{$ans1}{25} [@ AnswerFormatHelp("formulas") @]*
+
+[``[$ans2]=``][_______]{$ans2}{25} [@ AnswerFormatHelp("formulas") @]*
+
+[``[$ans3]=``][_______]{$ans3}{25} [@ AnswerFormatHelp("formulas") @]*
+
+END_PGML
+
+
+
+##############################################
+
+ENDDOCUMENT();        # This should be the last executable line in the problem.

@@ -63,25 +63,21 @@ $thetaExact=Compute("$atan-pi");
 $thetaPerl=sprintf("%0.3f",$thetaExact);
 $theta=Real($thetaPerl);
 
-$evaluatorfortheta=$theta->cmp(
-    checker => sub {
-    my ($correct,$student,$self) = @_;
-    $diff=Compute("$correct-$student");
-    $diffneg=-$diff;
-    if  (   
-            # check that the positive mod 2pi of the difference is less than 0.01
-            ($diff%(2*pi) < 0.01 ) or
-            ($diffneg%(2*pi) < 0.01 )
-        )
-        {
-            return 1;
-        }
-    else
-        {
-            return 0;
-        }
-    }
-);
+$evaluatorfortheta=$theta->with(period=>2*pi);
+
+# $evaluatorfortheta=$theta->cmp(
+#    checker => sub {
+#    my ($correct,$student,$self) = @_;
+#    $diff=Compute("abs($correct-$student)");
+#    if ($diff%(2*pi) < 0.01 ) {
+#            return 1;
+#        }
+#    else
+#        {
+#            return 0;
+#        }
+#    }
+#);
 
 ############################################################
 # Body

@@ -1,0 +1,96 @@
+##  DESCRIPTION
+##  Grupo LEMA, 2022
+##  www.grupolema.org
+##  Basado en una tarea de orientación de Union College
+##  ENDDESCRIPTION
+
+
+########################################################################
+DOCUMENT();        # This should be the first executable line in the problem.
+########################################################################
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "PGML.pl",
+  "AnswerFormatHelp.pl",
+);
+
+############################################################
+# Header
+############################################################
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+############################################################
+# PG Setup
+############################################################
+# Respuestas, contextos, randomización
+
+Context()->strings->add(WeBWorK => {});
+$WW=String("WeBWorK");
+
+$ans1=String('DNE');
+
+$ans2=Compute("-(Infinity)");
+
+Context("Interval");
+
+$a1 = random(1,9,1);
+$I = Compute("(-infinity,$a1)");
+
+
+
+$a = random(1,8,1);
+$b = random($a+1,$a+5,1);
+$c = random($b+1,$b+5,1);
+$J = Compute("[$a,$b) U ($b,$c)");
+
+##############################################
+
+BEGIN_PGML
+
+
+>> ## Otros tipos de respuestas ## <<
+
+
+### Respuestas que son siglas o palabras
+
+A veces las respuestas no son números. 
+
+*  Por ejemplo, puede que no haya respuesta, en cuyo caso debes escribir cosas como DNE (does not exist). El problema te dará instrucciones sobre qué palabras/códigos puedes usar.
+
+
+    Ingresa "DNE" acá (sin las comillas): [_____]{$ans1}{10}
+
+*  Otros problemas puede que requieran que ingreses [`\infty`] como respuesta, que se hace escribiendo "INFINITY" (in mayúsculas o minúsculas) o "INF" en su versión corta.  El problema usualmente te recordará esto. Para indicar [`-\infty`], por ejemplo, se usa "-INFINITY" o "-INF".
+
+    Ingresa [`-\infty`] acá: [________]{$ans2}{15}
+
+
+### Intervalos
+
+Un lugar en el que es común usar [`\infty`] es en la notación de intervalos. 
+Algunos problemas en [$WW] te pueden pedir que ingreses un intervalo como respuesta, usando notación estándar de intervalos. 
+
+Por ejemplo, [| [-2,5) |] es el intevalo de -2 a 5 que incluye el -2 y no incluye el 5, mientras que [| [2,inf) |] es el intervalo que se extiende infinitamente hacia la derecha desde 2, incluyendo al 2.
+
+Escribe el intervalo de puntos que son estrictamente menores que [`[$a1]`]: [______]{$I}{15} [@ AnswerFormatHelp("intervals") @]*
+
+### Combinaciones de intervalos
+
+Varios intervalos se pueden combinar usando uniones de conjuntos. La notación es [`\cup`], que se escribe en [$WW] con una u máyuscula: "U". Por ejemplo, [| [-2,0] U (8,inf) |]
+es el conjunto de números desde [`-2`] a [`0`] (incluyéndolos) junto con todos números mayores que 8 (sin incluir al 8).
+
+Escribe como una unión de intervalos el conjunto de números de [`[$a]`] a [`[$c]`] pero que no incluya [`[$b]`] ni [`[$c]`] (que sí incluya al [`[$a]`]): 
+
+[______]{$J}{20} [@ AnswerFormatHelp("intervals") @]*
+
+END_PGML
+
+##################################################
+
+ENDDOCUMENT();        # This should be the last executable line in the problem.

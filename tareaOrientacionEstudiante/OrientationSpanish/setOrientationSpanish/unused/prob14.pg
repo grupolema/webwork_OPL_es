@@ -1,0 +1,112 @@
+##  DESCRIPTION
+##  Grupo LEMA, 2022
+##  www.grupolema.org
+##  Basado en una tarea de orientación de Union College
+##  ENDDESCRIPTION
+
+
+########################################################################
+DOCUMENT();        # This should be the first executable line in the problem.
+########################################################################
+
+############################################################
+# Load Macros
+############################################################
+DOCUMENT();        # This should be the first executable line in the problem.
+
+loadMacros(
+  "PGstandard.pl",
+  "PGchoicemacros.pl",
+  "PGgraphmacros.pl",
+  "PGunion.pl",
+  "imageChoice.pl",
+  "../parserOrientation.pl",
+  "PGcourse.pl"
+);
+
+
+
+TEXT(beginproblem);
+
+Title("Gráficas en $WW");
+
+##############################################
+
+$ml = new_image_match_list(link => 0, border => 0);
+$ml->{separation} = 3;
+
+@Goptions = (-6,-6,6,6, axes => [0,0], grid => [6,6], size => [150,150]);
+$G1 = init_graph(@Goptions);
+$G2 = init_graph(@Goptions);
+$G3 = init_graph(@Goptions);
+$G4 = init_graph(@Goptions);
+
+$a1 = random(-6,2,.1); $b1 = random($a1+1,6,.1);  $m1 = ($b1-$a1)/12;
+$a2 = random(-2,6,.1); $b2 = random($a2-1,-6,.1); $m2 = ($b2-$a2)/12;
+$a3 = non_zero_random(.5,5,.1)*non_zero_random(-1,1,1);
+$a4 = non_zero_random(.5,5,.1)*non_zero_random(-1,1,1);
+
+$plotoptions = "using color:red and weight=2";
+plot_functions($G1,"$m1(x+6)+$a1 for x in <-5.8,5.8> $plotoptions");
+plot_functions($G2,"$m2(x+6)+$a2 for x in <-5.8,5.8> $plotoptions");
+plot_functions($G3,"$a3 for x in <-5.8,5.8> $plotoptions");
+plot_functions($G4,"10000(x-$a4) for x in <-5.8,5.8> $plotoptions");
+
+$ml->qa(
+  "The line is the graph of an increasing function", $G1,
+  "The line is the graph of a decreasing function",  $G2,
+  "The line is the graph of a constant function",    $G3,
+  "The line is not the graph of a function",         $G4
+);
+
+$ml->choose(4);
+
+#BEGIN_TEXT
+#
+#The simplest functions are the ${BITALIC}linear$EITALIC ones ---
+#the functions whose graphs are straight lines.  They are important
+#because many functions locally look like straight lines.  (Looking
+#like a line ${BITALIC}locally$EITALIC means that if we zoom in on the
+#function and look at it at a very powerful magnification, it will look
+#like a straight line.)
+#$PAR
+
+BEGIN_TEXT
+
+Escribe la letra que corresponde con cada enunciado:
+$PAR
+
+Si quieres ver las imágenes más grande. Haz clic en ellas.
+
+$BCENTER
+$PAR
+\{$ml->print_q\}
+$PAR
+$ECENTER
+
+\{$ml->print_a\}
+$PAR
+
+END_TEXT
+
+ANS(str_cmp($ml->ra_correct_ans));
+install_problem_grader(~~&std_problem_grader);
+$showPartialCorrectAnswers = 0;
+
+##################################################
+
+BEGIN_TEXT
+
+En problemas de emparejar como este, $WW solo te va a decir si todas las respuestas están bien o no. Si no todas están bien, $WW no te va a decir cuales están correctas o incorrectas.
+$PAR
+
+A veces los problemas vienen con pistas que aparecen después de un cierto número de intentos. Presiona "Pista" para ver la pista para este problema.
+
+END_TEXT
+
+$showHint = 1;
+HINT("¡$HINT Normalmente las pistas son más útiles que esta!");
+
+##################################################
+
+ENDDOCUMENT();        # This should be the last executable line in the problem.

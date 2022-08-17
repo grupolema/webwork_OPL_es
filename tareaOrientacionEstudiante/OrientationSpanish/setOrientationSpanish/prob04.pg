@@ -1,0 +1,121 @@
+##  DESCRIPTION
+##  Grupo LEMA, 2022
+##  www.grupolema.org
+##  Basado en una tarea de orientación de Union College
+##  ENDDESCRIPTION
+
+
+########################################################################
+DOCUMENT();        # This should be the first executable line in the problem.
+########################################################################
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "contextLimitedNumeric.pl",
+  "PGML.pl",
+  "AnswerFormatHelp.pl",
+);
+
+############################################################
+# Header
+############################################################
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+############################################################
+# PG Setup
+############################################################
+# Respuestas, contextos, randomización
+
+Context()->strings->add(WeBWorK => {});
+$WW=String("WeBWorK");
+
+Context("Numeric");
+$a = random(1,6,1);
+$b = random(2,6,1);
+$c = random(3,6,1);
+$d = random(2,25,1);
+
+$ans1Computation=Compute("$a+$b*$c");
+$ans2Computation=Compute("$a/$b*$c");
+$ans3Computation=Compute("3*$b-$a/5*$c+$d");
+$ans4Computation=Compute("2^($b)+1");
+$ans5Computation=Compute("3*(2^[$c])");
+
+
+Context("LimitedNumeric");
+$ans1=Compute($ans1Computation);
+$ans2=Compute($ans2Computation);
+$ans3=Compute($ans3Computation);
+$ans4=Compute($ans4Computation);
+$ans5=Compute($ans5Computation);
+
+##############################################
+
+
+BEGIN_PGML
+
+
+>> ## El orden de operaciones ## <<
+
+[$WW] y la mayoría del software moderno siguen las mismas reglas de "orden de operaciones" para calcular el significado de una expresión. 
+
+Es importante que lo tengas presente, para que te puedas comunicar con los computadores en matemáticas de manera efectiva.
+
+### El orden de operaciones (versión 1)
+
+Si no hay paréntesis o funciones (como "sin" o "log"), entonces  [$WW] calcula el valor de tu respuesta así:
+
+*  primero se hacen los exponenciales, 
+*  después las multiplicaciones y divisiones (de izquierda a derecha)
+*  y después las sumas y restas (de izquierda a derecha). 
+
+### Ejemplos:
+
+-------
+4\*3/6-2\*7+10 = 2 - 14 + 10 = -2 porque:
+*  4\*3/6 = 12/6 = 2 (las multiplicaciones y divisiones de hacen de izquierda a derecha), 
+*  y 2\*7 = 14
+*  y las multiplicaciones y divisiones se hacen antes que las sumas y restas
+
+-------
+12/3/2 = 4/2 = 2 (las multiplicaciones y divisiones de hacen de izquierda a derecha).
+
+-----
+2\*4^2 - 3\*4 = 2\*16 - 3\*4 = 32 - 12 = 20 porque:
+* 2\*4^2 = 2\*16 = 32 (las exponenciales antes que la multiplicación)
+* las multiplicaciones después
+* la resta al final
+
+---------
+
+### Práctica:
+
+Simplifica por completo las siguientes expresiones numéricas.
+
+Estos problemas esperan que respondas con un número (van a rechazar tu respuesta si usas /, \*, +, -).
+Si quieres, puedes ingresar aproximaciones decimales, pero asegúrate de poner bastantes decimales.
+
+
+[$a]+[$b]\*[$c] [`=`] [_________]{$ans1} [@ AnswerFormatHelp("numbers") @]*
+
+[$a]/[$b]\*[$c] [`=`] [_________]{$ans2} [@ AnswerFormatHelp("numbers") @]*
+
+3\*[$b]-[$a]/5\*[$c]+[$d] [`=`] [_________]{$ans3} [@ AnswerFormatHelp("numbers") @]*
+
+2^[$b]+1 [`=`] [_________]{$ans4} [@ AnswerFormatHelp("numbers") @]*
+
+3*2^[$c] [`=`] [_________]{$ans5} [@ AnswerFormatHelp("numbers") @]*
+
+
+### Sigamos ...
+
+Asegurate de que [$WW] te marque todas las respuestas como correctas y de enviar tus respuestas antes de seguir con el siguiente problema.
+
+END_PGML
+
+ENDDOCUMENT();        # This should be the last executable line in the problem.

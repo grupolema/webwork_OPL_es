@@ -1,0 +1,78 @@
+##  DESCRIPTION
+##  Grupo LEMA, 2022
+##  www.grupolema.org
+##  Basado en una tarea de orientación de Union College
+##  ENDDESCRIPTION
+
+
+########################################################################
+DOCUMENT();        # This should be the first executable line in the problem.
+########################################################################
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+  "PGstandard.pl",
+  "PGML.pl",
+);
+
+############################################################
+# Header
+############################################################
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+############################################################
+# PG Setup
+############################################################
+# Respuestas, contextos, randomización
+
+$WW="WeBWorK";
+
+############################################################
+
+##############################################
+BEGIN_PGML
+
+
+>> ## Las páginas de [$WW] ## <<
+
+La página de [$WW] está dividida en varias partes. 
+
+### Arriba: Botones navegación entre problemas
+
+Aparte de los botónes para ver el problema antrerior y el siguiente, también está el botón "Lista de problemas" que regresa a la página con la lista de todos los problemas en esta tarea.
+
+
+### Abajo: Botones para enviar respuestas
+
+Para enviar tus respuestas a que se te califiquen usas usas los botones debajo de este recuadro gris. 
+Estos te los explicamos en el siguiente problema. 
+
+Por ahora, ingresa un "5" en el siguiente campo de respuesta [______]{5} y presiona el botón "Enviar mis respuestas" para obtener un puntaje por este problema.
+
+
+
+### Arriba: Mensajes "Resultados" de [$WW] sobre tus respuestas
+
+Cuando envías una respuesta, justo de bajo de los botones de navegación en la parte de arriba verás una tabla de "Resultados" con información sobre si tus respuestas son correctas o no.
+
+### Abajo (debajo de los botones): información sobre tu puntaje, número de intentos, etc.
+
+Está la zona de mensajes en la que se te informa sobre puntajes parciales, si ya se pasó la fecha de entrega, o si ya están disponibles las respuestas para que las veas.
+
+### Navegación en la izquierda
+
+En la parte de la izquierda aparece una lista de los problemas de la tarea y una barra de progreso.
+
+
+### Sigamos...
+
+Presiona el botón "Enviar mis respuestas" para que te den puntos por este problema, y pasa al siguiente problema.
+
+END_PGML
+
+##############################################
+
+ENDDOCUMENT();        # This should be the last executable line in the problem.

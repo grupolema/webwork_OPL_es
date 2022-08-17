@@ -1,0 +1,78 @@
+########################################################################
+DOCUMENT();        # This should be the first executable line in the problem.
+########################################################################
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "PGML.pl",
+  "AnswerFormatHelp.pl",
+);
+
+############################################################
+# Header
+############################################################
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+############################################################
+# PG Setup
+############################################################
+# Respuestas, contextos, randomización
+
+Context()->strings->add(WeBWorK => {});
+$WW=String("WeBWorK");
+
+##############################################
+
+BEGIN_PGML
+
+>> ## Notas finales ## <<
+
+
+### Repasar con [$WW]
+
+Una vez has respondido correctamente a un problema, este siempre seguirá marcado como "correcto", incluso si regresas y envías otras respuestas. Entonces, puedes usar [$WW] para repasar sin que haya peligro de que dañes tus calificaciones.
+
+
+### Nota sobre opciones para visualizar símbolos y expresiones matemáticas
+
+En las "Preferencias de usuario" en el menú principal puedes cambiar la forma en la que se muestra las matemáticas. Hay dos opciones:
+
+*  images: [$WW] crea imágenes para cada ecuación. Esto puede ser un poco más lento.
+
+*  MathJax (la opción por defecto): [$WW] usa este sistema moderno para mostrar matemáticas, que es compatible con lectores y permite a cada usuario ajustar el zoom de acuerdo a sus preferencias.
+
+
+Estos son ejemplos de texto con símbolos matemáticos: [`x^2 + 3`], y [``\frac{x(1-x)}{2x + 1}``]. Haz click derecho en cualquiera de las dos para ver las preferencias de visualización de MathJax.
+
+
+### Si tienes dificultades
+
+[$WW] se diseñó para ayudarte a aprender matemáticas al darte retroalimentación instantanea y permitirte probar distintas respuestas. 
+
+Qué tanto te ayude a aprender depende de cómo lo uses. 
+
+Obtener una respuesta mal es una oportunidad para aprender, y debes esforzarte por entender qué estaba mal. De nada sirve para tu aprendizaje probar otras respuestas aleatoriamente hasta que el sistema te marque una respuesta correcta.
+
+Estas son algunas recomendaciones para cuando estes teniendo dificultades.
+
+*  Vuleve a leer el problema con cuidado en busca de posibles instruciones que no viste.
+
+*  Revisa el libro o tus notas de clase a ver si encuentras pistas de cosas que puedes intentar.
+
+*  Preguntale a tu instructor durante sus horas de oficina.
+
+*  Pídele ayuda a algún compañero, pero asegúrate de pedir explicaciones, ¡no la respuesta! De nada sirve la respuesta si no aprendiste cuál era el error que estabas cometiendo.
+
+*  Escríbele a tu instructor. Incluye en tu mensaje detalles de lo que has intentado.
+
+
+END_PGML
+
+##############################################
+
+ENDDOCUMENT();        # This should be the last executable line in the problem.

@@ -1,0 +1,110 @@
+##  DESCRIPTION
+##  Grupo LEMA, 2022
+##  www.grupolema.org
+##  Basado en una tarea de orientación de Union College
+##  ENDDESCRIPTION
+
+
+########################################################################
+DOCUMENT();        # This should be the first executable line in the problem.
+########################################################################
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "PGML.pl",
+  "AnswerFormatHelp.pl",
+);
+
+############################################################
+# Header
+############################################################
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+############################################################
+# PG Setup
+############################################################
+# Respuestas, contextos, randomización
+
+Context()->strings->add(WeBWorK => {});
+$WW=String("WeBWorK");
+
+Context("Numeric")->variables->are(
+  x => ['Real'],
+  y => ['Real'],
+); 
+
+$ans1=Formula("cos(5*x)");
+$ans2=Formula("tan(y^4)");
+$ans3=Formula("[sin(x)]^2+[cos(x)]^3");
+$ans4=Formula("2^(4*x^3)");
+
+############################################################
+
+BEGIN_PGML
+
+
+>> ## Orden de operaciones completo (con funciones) ## <<
+
+Estas son las reglas de precedencia completas que usa [$WW] para evaluar una expresión. El orden es el siguiente:
+
+1.  Evaluar las expresiones que están entre paréntesis.
+2.  Evaluar funciones, como sin(x), cos(x), log(x), sqrt(x).
+3.  Evaluar los exponentes (de derecha a izquierda).
+4.  Evaluar las multiplicaciones y divisiones (de izquierda a derecha).
+5.  Evaluar las sumas y restas (de izquierda a derecha).
+
+Debes tener esto en cuenta al usar [$WW] (al igual que cuando usas hojas de calculo u otras herramientas tecnológicas). 
+
+
+Estos son errores comunes que debes aprender a evitar:
+
+
+*  e^3x significa [`(e^3) x`] y no [`e^{(3x)}`] 
+
+    Razón: Por la regla 3, [$WW] primero calcula e^3, que da [`e^3`], y después a este resultado lo multiplica por [`x`].
+
+    Entonces: Debes escribir e^(3x) si quieres [`e^{3x}`]. En general, debes tener en cuenta siempre agregar paréntesis alrededor del exponente.
+
+
+    Práctica: escribe la expresión en el campo de respuesta. Revisa tu respuesta con el botón de "Vista previa de mis respuestas".
+
+    [`2^{4x^3}`] = [_______]{$ans4} [@ AnswerFormatHelp("formulas") @]*
+
+
+* [$WW] interpreta sin 2x como [`(\sin\, 2)*x`] y no como sin(2x)
+
+    Razón: Por la regla 2 [$WW] primero calcula [`\sin\, 2`] y después multiplica el resultado por [`x`]. 
+    Entonces: Debes escribir sin(2x) para el seno de [`2x`], aunque a menudo a mano lo escribimos como [`\sin\, 2x`]. En general, debes tener en cuenta siempre agregar paréntesis a los argumentos de las funciones trigonométricas.
+
+    El coseno de [`5x`] se escribe en [$WW] así: [_______]{$ans1}{20} [@ AnswerFormatHelp("formulas") @]*
+
+
+*  [$WW] interpreta cos t^3 como [`(\cos\, t)^3`]
+
+    Razón: Por la regla 2 [$WW] primero calcula [`\cos\, t`] y después eleva el resultado a la potencia de  3.
+
+    Entonces: Debes escribir cos(t^3) para el coseno de [`t^3`], aunque a menudo a mano lo escribimos como [`\cos\, t^3`]. En general (de nuevo), debes tener en cuenta siempre agregar paréntesis a los argumentos de las funciones trigonométricas
+
+    La tangente de [`y^4`] se escribe en [$WW] así: [_______]{$ans2}{20} [@ AnswerFormatHelp("formulas") @]*
+
+
+*  En las clases de matemáticas, a menudo escribimos [`\sin^2 x`] cuando queremos decir [`(\sin x)^2`].
+[$WW] te permite escribir esto como sin^2(x) pero en realidad es mejor que escribas  (sin(x))^2 porque hace tu intención más clara, y no todos los sistemas tecnológicos con tan inteligentes como [$WW].  Nota que la potencia de [`-1`], como en sin^(-1)(x), es un caso especial, pues indica que es la
+_función inversa_ arcsin(x) y no una potencia. 
+
+
+    Práctica: escribe la expresión en el campo de respuesta. Revisa tu respuesta con el botón de "Vista previa de mis respuestas".
+
+    [`\sin^2 x + \cos^3 x`] = [_______]{$ans3}{20} [@ AnswerFormatHelp("formulas") @]*
+
+
+END_PGML
+
+##############################################
+
+ENDDOCUMENT();        # This should be the last executable line in the problem.

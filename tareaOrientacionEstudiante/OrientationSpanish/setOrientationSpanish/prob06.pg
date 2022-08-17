@@ -1,0 +1,126 @@
+##  DESCRIPTION
+##  Grupo LEMA, 2022
+##  www.grupolema.org
+##  Basado en una tarea de orientación de Union College
+##  ENDDESCRIPTION
+
+
+########################################################################
+DOCUMENT();        # This should be the first executable line in the problem.
+########################################################################
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+  "PGstandard.pl",
+  "MathObjects.pl",
+  "PGML.pl",
+  "AnswerFormatHelp.pl",
+);
+
+############################################################
+# Header
+############################################################
+TEXT(beginproblem());
+$showPartialCorrectAnswers = 1;
+
+############################################################
+# PG Setup
+############################################################
+# Respuestas, contextos, randomización
+
+Context()->strings->add(WeBWorK => {});
+$WW=String("WeBWorK");
+
+Context("Numeric");
+Context()->variables->add(y=>'Real');
+Context()->flags->set(limits=>[0,2]);
+
+$ans1 = Compute("(x^(2*x-1))/((x^2-x)*(3*x+5))");
+$ans3 = Compute("((x+1)/(x-2))^4");
+$ans2 = Compute("(x^2+y^2)/(x^3-y^4)");
+
+##############################################
+
+BEGIN_PGML
+
+
+>> ## Recomendaciones sobre cómo ingresar respuestas ## <<
+
+
+### Escribe los [| * |] para aclarar el significado
+
+Aunque [$WW] entiende que dos cosas una al lado de la otra significa que se multiplican, a menudo es buena idea escribir el [| * |] de manera explícita, pues te permite ver con mayor claridad la estructura de tu respuesta.
+
+
+
+### Usa el botón "Vista previa de mis respuestas"
+
+Así puedes ver como está interpretando [$WW] lo que escribes. [$WW] te va a mostrar lo que cree que ingresaste (la vista previa aparece justo al lado de tu respuesta en la parte de arriba). 
+
+Recuerda que las vistas previas no cuentan como intentos ni afectan el límite de intentos. El número de intentos baja solo cuando presionas "Enviar mis respuestas".
+
+
+### Usa distintos tipos de paréntesis
+
+Puedes usar ( ), \[ \], y { }.  Esto sirve si tienes que usar paréntesis dentro de paréntesis para evitar confundirse. Ejemplo: en vez de 2^(3(x+3)) puedes usar [| 2^[3(x+3)] |].
+
+
+### Empareja los paréntesis desde el comienzo
+
+Cuando escribas el paréntesis de la izquierda, escribe de una vez el paréntesis de la derecha que le corresponde. Después, pon el cursor entre los dos paréntesis y escribe lo que quieres que vaya dentro de ellos.
+
+
+### Usa "plantillas"
+
+Cuando la respuesta sea muy complicada, escribe una "plantilla" de la expresión que quieres ingresar. Por ejemplo, si quieres ingresar  
+   [```\frac{2x^2-5}{(x+1)(3x^{3x} - 22)},```]
+
+una buena forma de empezar es escribir [| ( ) / [ ( ) * ( ) ] |].  Esta es la "plantilla" de "un número dividido entre el producto de otros dos números" (¡nota que la plantilla [| ( ) / ( ) * ( ) |] no es un buen punto de partida, pues el [| *( ) |] del final no estaría dividiendo!)
+
+
+### Usa paréntesis para aclarar las divisiones
+
+Cuando hay división, es buena idea usar paréntesis incluso en los casos simples, en vez de depender del orden de las operaciones. 
+
+Por ejemplo, 1/2x y (1/2)x ambas significan lo mismo (primero se divide 1 entre 2 y después se multiplica por x) pero (1/2)x es más fácil de entender.
+
+
+### Usa paréntesis para aclarar los exponentes
+
+Igualmente, usa paréntesis para clarificar el significado de expresiones que usan exponentes. Escribe  (e^x)^2 si quieres que signifique [`(e^x)^2`], y escribe e^(x^2) si quieres que signifique [`e^{(x^2)}`].
+
+----------
+
+### Práctica
+
+Ingresa las siguientes funciones en los campos de respuesta. 
+
+Comienza con una plantilla apropiada en cada caso y revisa tu trabajo con el botón "Vista previa de mis respuestas".
+
+-------------
+
+[``[$ans2]=``][_______]{$ans2}{25} [@ AnswerFormatHelp("formulas") @]* 
+
+        ¡Revisa tu trabajo con el botón "Vista previa de mis respuestas"!  
+        ¿Por qué es [| ( ) / ( ) |] la plantilla correcta acá?  
+        ¿Por qué es [| x^2 + y^2 / x^3 - y^4 |] incorrecto?
+
+-------------
+
+[``[$ans1]=``][_______]{$ans1}{25} [@ AnswerFormatHelp("formulas") @]*
+
+        Comienza con la plantilla [| [ x^( ) ] / [ ( ) * ( ) ] |].
+
+-----
+
+[``[$ans3]=``][_______]{$ans3}{25} [@ AnswerFormatHelp("formulas") @]*
+
+
+END_PGML
+
+# ##############################################
+# 
+ENDDOCUMENT();        # This should be the last executable line in the problem.
+ 
