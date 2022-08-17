@@ -2,15 +2,15 @@
 
 1.  Descargar el archivo .tgz.
 2.  Subirlo al curso con el `Explorador de archivos`:
-   a.  Ir al `Explorador de archivos`
-   b.  Seleccionar el tgz desde el Explorador de archivos con [Choose file] y presionar [Upload] 
+    a.  Ir al `Explorador de archivos`
+    b.  Seleccionar el tgz desde el Explorador de archivos con [Choose file] y presionar [Upload] 
 3.  Importar la tarea con `setOrientationSpanish.def`:
-   a.  Ir al editor de tareas y seleccionar la pestaña [Import / Importar].
-   b.  Seleccionar "import single set"
-   c.  En [tr: Import from where?] seleccionar `setOrientationSpanish.def`
-   d.  En [tr: Import sets with names] escribir un nombre para la tarea.
-   e.  Seleccionar otras opciones relevantes.
-   f.  Presionar el botón de [Ejecutar].
+    a.  Ir al editor de tareas y seleccionar la pestaña [Import / Importar].
+    b.  Seleccionar "import single set"
+    c.  En [tr: Import from where?] seleccionar `setOrientationSpanish.def`
+    d.  En [tr: Import sets with names] escribir un nombre para la tarea.
+    e.  Seleccionar otras opciones relevantes.
+    f.  Presionar el botón de [Ejecutar].
 
 Ver más detalles en el [Tutorial para instructor de WeBWorK del Grupo LEMA](https://docs.google.com/document/d/e/2PACX-1vRuSzbWGHnGnIDhBr956HmYldIL0jXGkYZb5LrwolOthnEB4VF6ubRFzGVERBEx4WgQKTU90afq8AnX/pub#h.eg89zk705kp5) (ver los últimos pasos de la sección "Copiar una tarea con problemas propios de un curso a otro").
 
