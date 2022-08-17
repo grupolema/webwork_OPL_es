@@ -118,7 +118,7 @@ Ver `plantillaPGML-CampoRespuestaTolerancia.pg`
 
 *  Constructos y evaluación: `plantillaPGML-ExpresionesConstructos.pg`
 *  Variables distintas a x (ajustes a contextos): `plantillaPGML-ExpresionesVariables.pg`
-*  Dominios para ajustar equivalencias algebraicas (y más sobre ajustes a contextos - deshabilitar funciones y operadores): `plantillaPGML-ExpresionesDominio.pg`
+*  Dominios para ajustar equivalencias algebraicas (y más sobre ajustes a contextos - deshabilitar funciones y operadores): `plantillaPGML-ExpresionesDominio1.pg` y `plantillaPGML-ExpresionesDominio2.pg`
 *  Más info de contextos: https://webwork.maa.org/wiki/Introduction_to_Contexts
 *  variables con símbolos distintos (por ejemplo θ). Ver `plantillaPGML-ExpresionesConVariablesRaras.pg`
 *  Expresiones con dominio entero (por ejemplo, para poder evaluar expresiones con (-1)^n, o n! de forma correcta: `plantillaPGML-ExpresionesDominioEnteros.pg`
