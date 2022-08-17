@@ -27,7 +27,7 @@ La carpeta `unused` contiene problemas de la tarea original de Union College que
 
 ## Para regenerar el tgz:
 
-Para regenerar el tgz, en MacOS usar el commando:
+Para regenerar el tgz, en MacOS usar el comando (en la terminal):
 
 ```bash
 tar -cvzf OrientationSpanish.tgz setOrientationSpanish setOrientationSpanish.def
