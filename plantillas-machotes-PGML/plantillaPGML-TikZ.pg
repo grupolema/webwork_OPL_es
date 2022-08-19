@@ -49,11 +49,18 @@ $ShowPartialCorrectAnswers = 1; # gives students individual feedback on each ans
 $a = random(2,3,0.1);  # horizonatal translation
 $b = Compute("1/(1+e^(-4*($a-2.5)))");           # vertical translation
 
-# 
-$graph_image = createTikZImage();
-$graph_image -> texPackages(["pgfplots"]);
-#$graph_image->tikzLibraries();
 
+# Inicializar la imagen
+$graph_image = createTikZImage();
+
+# Para tener acceso a \begi{axis} de pgfplots
+$graph_image -> texPackages(["pgfplots"]);
+
+# Para hacer el fondo blanco
+$graph_image->tikzLibraries("backgrounds");
+$graph_image -> tikzOptions("background rectangle/.style={fill=white}, show background rectangle");
+
+# Código tikz de la imagen
 $graph_image->BEGIN_TIKZ
 \begin{axis}%   
    [ axis lines = middle
@@ -78,7 +85,7 @@ $graph_image->BEGIN_TIKZ
       (axis cs: $a,0);
 \end{axis}
 END_TIKZ
-
+# Fin de Código tikz de la imagen
 
 
 ############################################################
@@ -93,7 +100,7 @@ Dos cosas muy importantes para poder usar TikZ en WeBWorK:
 
 *  La versión de WeBWorK debe ser mayor o igual a 2.16.
 
-[@ image($graph_image, width => 400, tex_size => 1000) @]*
+>> [@ image($graph_image, width => 400, tex_size => 1000) @]* <<
 
 END_PGML
 
