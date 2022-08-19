@@ -1,0 +1,125 @@
+##  DESCRIPTION
+##  Formación en programación de problemas para WeBWorK
+##  Grupo LEMA
+##  www.grupolema.org
+##  Basado en el ejemplo en : https://webwork.maa.org/wiki/TikZImages
+##  ENDDESCRIPTION
+
+##KEYWORDS('','')
+
+## DBsubject('')
+## DBchapter('')
+## DBsection('')
+## Date('6/3/2002')
+## Author('Enrique Acosta')
+## Institution('Grupo LEMA')
+## TitleText1('')
+## EditionText1('')
+## AuthorText1('')
+## Section1('')
+## Problem1('')
+
+########################################################################
+
+DOCUMENT();
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+   "PGstandard.pl",
+   "MathObjects.pl",
+   "PGML.pl",
+   "PGtikz.pl"
+);
+############################################################
+
+
+############################################################
+# Header
+############################################################
+TEXT(beginproblem());
+$ShowPartialCorrectAnswers = 1; # gives students individual feedback on each answer blank 
+
+
+############################################################
+# PG Setup
+############################################################
+# Randomization
+$a = random(2,3,0.1);  # horizonatal translation
+$b = Compute("1/(1+e^(-4*($a-2.5)))");           # vertical translation
+
+# 
+$graph_image = createTikZImage();
+$graph_image -> texPackages(["pgfplots"]);
+#$graph_image->tikzLibraries();
+
+$graph_image->BEGIN_TIKZ
+\begin{axis}%   
+   [ axis lines = middle
+   , samples=75 
+   , xlabel = {\(t\)} 
+   , ymax=1.2
+   , grid = both
+   ] 
+   \addplot%
+      [ color=blue
+      , domain=0:4.5
+      , style=thick
+      ] {1/(1+exp(-4*(x-2.5))}%
+      node
+      [ above left
+      , pos=0.7
+      ] {\( \displaystyle f(t)=\frac{1}{1+e^{-4(t-2.5)}}\)};
+    \draw[red, thick] 
+      (axis cs: 0,$b) 
+        node[above right]{\($b\)} 
+      -| 
+      (axis cs: $a,0);
+\end{axis}
+END_TIKZ
+
+
+
+############################################################
+# Body
+############################################################
+
+BEGIN_PGML
+
+Dos cosas muy importantes para poder usar TikZ en WeBWorK:
+
+*  Cualquier contenido matemático entre [| $...$ |] se debe reemplazar por \[ \\(....\\) |].
+
+*  La versión de WeBWorK debe ser mayor o igual a 2.16.
+
+[@ image($graph_image, width => 400, tex_size => 1000) @]*
+
+END_PGML
+
+############################################################
+# Hint
+############################################################
+#Set value of $showHint in PGcourse.pl for course-wide attempt threshhold for revealing hints
+
+BEGIN_PGML_HINT
+
+Hint
+
+END_PGML_HINT
+
+############################################################
+# Solution
+############################################################
+
+BEGIN_PGML_SOLUTION
+
+Solución.
+
+END_PGML_SOLUTION
+
+############################################################
+# End Problem
+############################################################
+
+ENDDOCUMENT();

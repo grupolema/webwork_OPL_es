@@ -240,7 +240,7 @@ Si se tienen varias imágenes ya creadas y se quiere cambiar cuál se carga de a
 ### Usar TikZ para que WeBWorK genere imágenes (aleatorizadas o no) directamente dentro del código.pg
 A partir de WeBWorK 2.16, se puede agregar código TikZ directamente en los archivos pg para que WeBWorK genere la imagen cuando el estudiante carga el problema. Esto incluso permite agregar elementos aleatorizados a las imágenes (como números en variables pg).
 
-Ver: https://webwork.maa.org/wiki/TikZImages
+Ver `plantillaPGML-TikZ.pg` y la documentación en https://webwork.maa.org/wiki/TikZImages y en https://webwork.maa.org/pod/pg/macros/PGtikz.html.
 
 
 ### Generar imágenes directamente con código pg - sistema básico
