@@ -10,7 +10,7 @@
 ## DBsubject('')
 ## DBchapter('')
 ## DBsection('')
-## Date('6/3/2002')
+## Date('8/20/2002')
 ## Author('Enrique Acosta')
 ## Institution('Grupo LEMA')
 ## TitleText1('')
@@ -46,8 +46,8 @@ $ShowPartialCorrectAnswers = 1; # gives students individual feedback on each ans
 # PG Setup
 ############################################################
 # Randomization
-$a = random(2,3,0.1);  # horizonatal translation
-$b = Compute("1/(1+e^(-4*($a-2.5)))");           # vertical translation
+$a = random(2,3,0.1);  
+$fa = Compute("1/(1+e^(-4*($a-2.5)))"); 
 
 
 # Inicializar la imagen
@@ -79,8 +79,8 @@ $graph_image->BEGIN_TIKZ
       , pos=0.7
       ] {\( \displaystyle f(t)=\frac{1}{1+e^{-4(t-2.5)}}\)};
     \draw[red, thick] 
-      (axis cs: 0,$b) 
-        node[above right]{\($b\)} 
+      (axis cs: 0,$fa) 
+        node[above right]{\($fa\)} 
       -| 
       (axis cs: $a,0);
 \end{axis}
