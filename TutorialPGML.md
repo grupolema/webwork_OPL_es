@@ -318,3 +318,6 @@ https://webwork.maa.org/wiki/LinearApprox1
  -->
 ### Un buen resumen corto con algunos temas más complejos:
 https://github.com/drdrew42/WeBWorK-problem-authoring/blob/main/intro.md 
+
+### Excelente fuente en construcción
+https://openwebwork.github.io/pg-docs/
